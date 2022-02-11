@@ -15,6 +15,10 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { StageComponent } from './stage/stage.component';
+import { AlternanceComponent } from './alternance/alternance.component';
+import { FreelanceComponent } from './freelance/freelance.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    EntreprisesComponent,
+    StageComponent,
+    AlternanceComponent,
+    FreelanceComponent
   ],
   imports: [
     BrowserModule,

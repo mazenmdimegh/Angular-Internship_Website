@@ -68,18 +68,18 @@
             <span class="nav-link-inner--text">Stage</span>
           </a>
           <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
+            <a [routerLink]="['/landing']" class="dropdown-item">Stage à l'etranger </a>
+            <a [routerLink]="['/user-profile']" class="dropdown-item">Stage Pfe</a>
+            <a [routerLink]="['/login']" class="dropdown-item">Stage d'été</a>
+            <a [routerLink]="['/stage']" class="dropdown-item">All</a>
           </div>
         </li>
         
         <!-- <li ><a [routerLink]="['/register']" style="color:white">Recruteur</a></li> -->
         
-        <li class="nav-item dropdown"><a [routerLink]="['/register']" style="color:white">Alternance</a></li>
-        <li class="nav-item dropdown" ><a [routerLink]="['/register']" style="color:white">Freelance</a></li>
-        <li class="nav-item dropdown"><a [routerLink]="['/register']" style="color:white">Entreprise</a></li>
+        <li class="nav-item dropdown"><a [routerLink]="['/alternance']" style="color:white">Alternance</a></li>
+        <li class="nav-item dropdown" ><a [routerLink]="['/freelance']" style="color:white">Freelance</a></li>
+        <li class="nav-item dropdown"><a [routerLink]="['/entreprises']" style="color:white">Entreprise</a></li>
         <li class="nav-item dropdown"><a [routerLink]="['/register']" style="color:white">Blog</a></li>
     </ul>
 
@@ -104,7 +104,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+          <a class="nav-link nav-link-icon" [routerLink]="['/login']">
             <i ></i>
             <span >Login</span>
           </a>

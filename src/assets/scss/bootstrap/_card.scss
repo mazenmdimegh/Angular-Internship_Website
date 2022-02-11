@@ -8,15 +8,16 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: $card-bg;
+  background-color: rgba(51, 170, 51, .1);
+  background-image: url('https://raw.githubusercontent.com/Khouloud-lab/angular-project/master/src/assets/img/theme/e5.jpg');
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
-
   > hr {
     margin-right: 0;
     margin-left: 0;
   }
+}
 
   > .list-group:first-child {
     .list-group-item:first-child {
@@ -29,7 +30,6 @@
       @include border-bottom-radius($card-border-radius);
     }
   }
-}
 
 .card-body {
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
@@ -37,6 +37,7 @@
   flex: 1 1 auto;
   padding: $card-spacer-x;
 }
+
 
 .card-title {
   margin-bottom: $card-spacer-y;

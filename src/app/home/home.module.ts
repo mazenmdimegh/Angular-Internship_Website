@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,7 @@ import { SectionsModule } from '../sections/sections.module';
         RouterModule,
         SectionsModule
     ],
-    declarations: [ HomeComponent ],
+    declarations: [ HomeComponent, ContentComponent ],
     exports:[ HomeComponent ],
     providers: []
 })

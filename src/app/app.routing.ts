@@ -8,6 +8,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { StageComponent } from './stage/stage.component';
+import { AlternanceComponent } from './alternance/alternance.component';
+import { FreelanceComponent } from './freelance/freelance.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -15,6 +19,10 @@ const routes: Routes =[
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
+    {path:'stage',            component: StageComponent},
+    {path:'alternance',            component: AlternanceComponent},
+    {path:'freelance',            component: FreelanceComponent},
+    { path: 'entreprises',          component: EntreprisesComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
