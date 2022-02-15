@@ -5506,7 +5506,8 @@
 }
  .modal-dialog {
 	 max-width: 510px;
-	 margin: 10px auto;
+	 margin-right: 0px;
+	 margin-top: 0px;
 }
  .modal-dialog button.close {
 	 width: 16px;

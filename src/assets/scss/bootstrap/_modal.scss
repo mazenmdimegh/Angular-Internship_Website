@@ -154,8 +154,8 @@
 @include media-breakpoint-up(sm) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    max-width: $modal-md;
-    margin: $modal-dialog-margin-y-sm-up auto;
+    margin: 0 0 0 50%;
+    
   }
 
   .modal-dialog-centered {
