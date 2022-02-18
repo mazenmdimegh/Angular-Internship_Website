@@ -19,6 +19,9 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { StageComponent } from './stage/stage.component';
 import { AlternanceComponent } from './alternance/alternance.component';
 import { FreelanceComponent } from './freelance/freelance.component';
+import { FormCondidatComponent } from './signup/form-condidat/form-condidat.component';
+import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entrepreneur.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { FreelanceComponent } from './freelance/freelance.component';
     EntreprisesComponent,
     StageComponent,
     AlternanceComponent,
-    FreelanceComponent
+    FreelanceComponent,
+    FormCondidatComponent,
+    FormEntrepreneurComponent,
+    FavorisComponent
   ],
   imports: [
     BrowserModule,

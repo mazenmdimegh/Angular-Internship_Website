@@ -12,12 +12,20 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { StageComponent } from './stage/stage.component';
 import { AlternanceComponent } from './alternance/alternance.component';
 import { FreelanceComponent } from './freelance/freelance.component';
+import { FormCondidatComponent } from './signup/form-condidat/form-condidat.component';
+import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entrepreneur.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
     { path: 'user-profile',     component: ProfileComponent },
+    { path: 'signup',     component: SignupComponent },
+    { path: 'formC',     component: FormCondidatComponent },
+    { path: 'formE',     component: FormEntrepreneurComponent },
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
+    { path: 'favoris',          component: FavorisComponent },
+
     { path: 'login',          component: LoginComponent },
     {path:'stage',            component: StageComponent},
     {path:'alternance',            component: AlternanceComponent},

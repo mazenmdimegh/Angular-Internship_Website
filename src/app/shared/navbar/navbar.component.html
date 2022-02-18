@@ -98,9 +98,15 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">
-            <i class="fa fa-github"></i>
-            <span class="nav-link-inner--text d-lg-none">Github</span>
+           
+          <a class="nav-link nav-link-icon" [routerLink]="['/favoris']" title="favoris">
+            <span class="new-header__favorites-count "style="
+            background-color: white;
+            color: black;
+            font-size: 10px;
+        ">2</span><i class="fa fa-heart-o"style="
+    font-size: 22px;
+"></i>   
           </a>
         </li>
         <li class="nav-item">
@@ -110,7 +116,7 @@
           </a>
         </li>
         <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar" target="_blank" class="btn btn-neutral btn-icon">
+          <a [routerLink]="['/signup']" target="_blank" class="btn btn-neutral btn-icon">
             <span class="btn-inner--icon">
               <i ></i>
             </span>
@@ -121,3 +127,4 @@
     </div>
   </div>
 </nav>
+<!--href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar"-->
