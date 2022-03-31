@@ -81,8 +81,8 @@
         <div class="container container-fluid listing">
           <h4 class="listing__title with-banner">
           </h4>
-          <div class="listing-item__list with-banner" style="            margin-left: 50px;        ">
-            <article class="media well listing-item listing-item__jobs listing-item__featured">
+          <div class="listing-item__list with-banner" style="margin-left: 50px;" >
+            <article class="media well listing-item listing-item__jobs listing-item__featured"*ngFor="let E of Offres._embedded.offreEntities">
               <div class="media-left listing-item__logo">
                 <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
                   tabindex="-1">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="media-heading listing-item__title">
                   <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
-                    class="link">Stage Operations Manager / Guest &amp; Hotel Quality Manager</a>
+                    class="link">{{E.titre}}</a>
                 </div>
 
                 <div class="listing-item__info listing-item__info--item-salary-range clearfix">
@@ -109,22 +109,18 @@
                 </div>
                 <div class="listing-item__info clearfix">
                   <span class="listing-item__info--item listing-item__info--item-company">
-                    FLATEO
+                    {{E.societe}}
                   </span>
                   <span class="listing-item__info--item listing-item__info--item-location">
-                    Télétravail (Mix entre télétravail et flex office)
+                    {{E.lieu}}
                   </span>
                 </div>
                 <div class="listing-item__desc">
-                  Tu aimes les challenges ? La logistique et l'opérationnel te parlent ? Notre équipe surmotivée
-                  recherche des talents pour assister notre Operations Manager pour le marché francilien uniquement !
-                  Pourquoi pas toi ? Rejoins la Flateam !
-                  Dans un contexte de forte croissance, et d'expansions en régions, nous souhaitons étoffer notre équipe
-                  opérationnelle.
+                  {{E.description}}
                 </div>
               </div>
             </article>
-
+<!-- 
             <article class="media well listing-item listing-item__jobs listing-item__featured">
               <div class="media-left listing-item__logo">
                 <a href="https://www.stage.fr/job/884318/alternance-recherche-développeur-full-stack-h-f-lyon/"
@@ -415,7 +411,7 @@
                   Dans un contexte de forte croissance, nous souhaitons étoffer notre équipe commerciale.
                 </div>
               </div>
-            </article>
+            </article> -->
 
           </div>
           <div class="banner banner--right">
@@ -442,6 +438,11 @@
           </div>
         </div>
       </section>
+      <ul *ngIf='pages' class="nav nav-pills" style="display: flex;justify-content: center;">
+        <li [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages; let i=index" class="page-link">
+        <a class="clickable"(click)="onPageProduits(i) ">{{i}}</a> 
+        </li>
+    </ul>
     </div>
 
   </div>

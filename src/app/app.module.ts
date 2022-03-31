@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +23,7 @@ import { FreelanceComponent } from './freelance/freelance.component';
 import { FormCondidatComponent } from './signup/form-condidat/form-condidat.component';
 import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entrepreneur.component';
 import { FavorisComponent } from './favoris/favoris.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,10 @@ import { FavorisComponent } from './favoris/favoris.component';
     NgbModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     HomeModule
   ],
   providers: [],

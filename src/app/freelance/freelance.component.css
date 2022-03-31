@@ -7514,6 +7514,30 @@
 		 outline: none;
 	}
 }
+.clickable{
+    cursor: pointer;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+	border-radius: 11px;
+}
+.b {
+    background-color: #ce4343; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+  }
  @media (min-width: 480px) {
 	 .featured-companies__slider--arrows:hover {
 		 opacity: 1;

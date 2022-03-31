@@ -54,6 +54,48 @@
           </svg>
         </div>
       </section>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+      </ng-template>
+      
+      <ng-template #longContent let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+      </ng-template>
       <!-- 1st Hero Variation -->
     </div>
     <section class="section section-lg pt-lg-0 mt--200">
@@ -64,7 +106,10 @@
               <div class="col-lg-4">
                 <div class="card card-lift--hover shadow border-0" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsycDWKmoLpxRPKDUP_aZJzcuH_wuFPeaP4I8A-Ezi6DyzjBiUvevj65CII0tfQsjncQo&usqp=CAU');" >
                   <div class="card-body py-5">
-                    <a href="javascript:void(0)" class="btn btn-primary mt-4" style="background-color: gray;margin-top: 7.5rem!important;border-radius: 1.25rem;border-color: #5e72e4;margin-left: 69px;margin-bottom: -48px;">Consulter</a>
+                    <button class="btn btn-icon btn-3 btn-primary" (click)="openScrollableContent(longContent)" type="button"style="background-color: gray;margin-top: 7.5rem!important;border-radius: 1.25rem;border-color: #5e72e4;margin-left: 69px;margin-bottom: -48px;">
+                      <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
+                      <span class="btn-inner--text">consulter</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -172,8 +217,10 @@
                 <div class="card card-lift--hover shadow border-0" style="background-image: url('https://www.sofrecom.com/media/layout/img/placeholder.jpeg');" >
                   <div class="card-body py-5">
                  
-                   
-                    <a href="javascript:void(0)" class="btn btn-primary mt-4" style="background-color: gray;margin-top: 7.5rem!important;border-radius: 1.25rem;border-color: #5e72e4;margin-left: 69px;margin-bottom: -48px;">Consulter</a>
+                    <button class="btn btn-icon btn-3 btn-primary" type="button"style="background-color: gray;margin-top: 7.5rem!important;border-radius: 1.25rem;border-color: #5e72e4;margin-left: 69px;margin-bottom: -48px;">
+                      <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
+                      <span class="btn-inner--text">With icon</span>
+                    </button>
                   </div>
                 </div>
               </div>
