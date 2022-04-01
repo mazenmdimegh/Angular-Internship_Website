@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 export class FreelanceComponent implements OnInit {
   public Offres:any;
 
-  public size:number=1;
+  public size:number=4;
   public currentPage:number=0;
   public totalPages:any;
   public pages:Array<number> |undefined ;

@@ -5513,10 +5513,10 @@
     display: block;
     clear: both;
     content: ""; }
-  section{
-      /*background-color: #000;*/
+  /* section{
+      /*background-color: #000;
       background-image: url('../../assets/img/theme/bg.jpg');
-  } 
+  }  */
   .d-none {
     display: none !important; }
   
