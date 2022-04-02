@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { first } from 'rxjs-compat/operator/first';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./form-condidat.component.css']
 })
 export class FormCondidatComponent implements OnInit {
-
+  model: NgbDateStruct;
   constructor(private fb:FormBuilder,private authService:AuthService) { }
   registrationForm= this.fb.group({
     nom:[''],
