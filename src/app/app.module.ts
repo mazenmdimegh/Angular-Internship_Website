@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
-
+//import { ModalModule } from 'ngx-bootstrap/modal';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
