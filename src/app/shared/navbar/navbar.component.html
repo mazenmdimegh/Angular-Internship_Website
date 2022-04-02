@@ -115,13 +115,16 @@
             <span >Login</span>
           </a>
         </li>
-        <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a [routerLink]="['/signup']" class="btn btn-neutral btn-icon">
-            <span class="btn-inner--icon">
-              <i ></i>
-            </span>
-            <span class="nav-link-inner--text">Signup</span>
-          </a>
+        <li class="">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle>SignUp</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem [routerLink]="['/formE']">Entrepreneur</button>
+                <button ngbDropdownItem [routerLink]="['/formc']">Etudiant</button>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
