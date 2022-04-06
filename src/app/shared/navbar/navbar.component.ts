@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
     public isCollapsed = true;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
-
+    public LoggedIn = false;
     constructor(public location: Location, private router: Router) {
     }
 

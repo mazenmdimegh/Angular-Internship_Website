@@ -8,6 +8,9 @@
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+.t{
+	margin-top: 50px;
+}
 .container {
 	max-width: 1130px;
 }

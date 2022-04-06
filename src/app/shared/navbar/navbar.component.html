@@ -1,10 +1,11 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+<nav id="navbar-main"
+  class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <img src="./assets/img/brand/argon-white.png">
+      <img src="./assets/img/brand/InternUpOff.png">
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
@@ -17,7 +18,7 @@
           </div>
           <div class="col-6 collapse-close">
             <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
-                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
               <span></span>
               <span></span>
             </button>
@@ -74,51 +75,82 @@
             <a [routerLink]="['/stage']" class="dropdown-item">All</a>
           </div>
         </li>
-        
+
         <!-- <li ><a [routerLink]="['/register']" style="color:white">Recruteur</a></li> -->
-        
+
         <li class="nav-item dropdown"><a [routerLink]="['/alternance']" style="color:white">Alternance</a></li>
-        <li class="nav-item dropdown" ><a [routerLink]="['/freelance']" style="color:white">Freelance</a></li>
+        <li class="nav-item dropdown"><a [routerLink]="['/freelance']" style="color:white">Freelance</a></li>
         <li class="nav-item dropdown"><a [routerLink]="['/entreprises']" style="color:white">Entreprise</a></li>
         <li class="nav-item dropdown"><a [routerLink]="['/register']" style="color:white">Blog</a></li>
-    </ul>
+      </ul>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank"
+            data-toggle="tooltip" title="Like us on Facebook">
             <i class="fa fa-facebook-square"></i>
             <span class="nav-link-inner--text d-lg-none">Facebook</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank"
+            data-toggle="tooltip" title="Follow us on Instagram">
             <i class="fa fa-instagram"></i>
             <span class="nav-link-inner--text d-lg-none">Instagram</span>
           </a>
         </li>
-        
+
         <li class="nav-item">
-           
+
           <a class="nav-link nav-link-icon" [routerLink]="['/favoris']" title="favoris">
-            <span class="new-header__favorites-count "style="
+            <span class="new-header__favorites-count " style="
             background-color: white;
             color: black;
             font-size: 10px;
-        ">2</span><i class="fa fa-heart-o"style="
-    font-size: 22px;
-"></i>   
+        ">2</span><i class="fa fa-heart-o" style="
+                    font-size: 22px;
+                "></i>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="LoggedIn">
           <a class="nav-link nav-link-icon" [routerLink]="['/login']">
-            <i ></i>
-            <span >Login</span>
+            <i></i>
+            <span>Login</span>
           </a>
         </li>
-        <li class="">
+        <li *ngIf="LoggedIn">
           <div class="col">
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-outline-primary" id="dropdownBasic1" style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle>SignUp</button>
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle>SignUp</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem [routerLink]="['/formE']">Entrepreneur</button>
+                <button ngbDropdownItem [routerLink]="['/formC']">Etudiant</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color:#ffffff00;color:white;padding:0px;border: none;" ngbDropdownToggle>
+                <i class="fa fa-comments" style="font-size: 30px;"></i></button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div ngbDropdownItem [routerLink]="['/formE']"><strong>aa</strong><p>Entrepreneur</p></div>
+                <div ngbDropdownItem [routerLink]="['/formE']"><strong>aa</strong><p>Entrepreneur</p></div>
+                <div ngbDropdownItem [routerLink]="['/formE']"><strong>aa</strong><p>Entrepreneur</p></div>
+              </div>
+            </div>
+          </div>
+          
+        </li>
+        <li *ngIf="!LoggedIn">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle>Profile</button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button ngbDropdownItem [routerLink]="['/formE']">Entrepreneur</button>
                 <button ngbDropdownItem [routerLink]="['/formC']">Etudiant</button>
