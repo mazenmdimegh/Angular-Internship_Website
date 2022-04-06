@@ -101,7 +101,7 @@ a {
 }
 .main-sections.listing__featured {
 	padding-bottom: 70px;
-	background-color: #c3bcbc 66;
+	background-color: #f9fafa;
 	padding-bottom: 110px;
 }
 .container {
@@ -141,7 +141,7 @@ a {
 .listing-item {
 	min-height: 104px;
 	background-color: #fff;
-	box-shadow: none;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	position: relative;
 	-webkit-transition: box-shadow 0.2s ease-in;
 	-moz-transition: box-shadow 0.2s ease-in;
