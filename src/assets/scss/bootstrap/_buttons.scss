@@ -75,17 +75,23 @@ fieldset:disabled a.btn {
 //
 // Link buttons
 //
+.btn-outline-primary{
+	&:hover {
+		color: #5e72e4;
+    background-color: #5e72e4;
+	}
+}
 
 // Make a button look and behave like a link
 .btn-link {
   font-weight: $font-weight-normal;
   color: $link-color;
-  background-color: transparent;
+  background-color: white;
 
   @include hover {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
-    background-color: transparent;
+    background-color: white;
     border-color: transparent;
   }
 
