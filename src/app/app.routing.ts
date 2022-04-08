@@ -16,12 +16,14 @@ import { FormCondidatComponent } from './signup/form-condidat/form-condidat.comp
 import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entrepreneur.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { ChatComponent } from './chat/chat.component';
+import { OffreComponent } from './offre/offre.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',     component: SignupComponent },
     { path: 'chat',     component: ChatComponent },
+    { path: 'offre',     component: OffreComponent },
     { path: 'formC',     component: FormCondidatComponent },
     { path: 'formE',     component: FormEntrepreneurComponent },
     { path: 'register',           component: SignupComponent },

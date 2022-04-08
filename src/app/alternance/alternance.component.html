@@ -86,7 +86,7 @@
           <div class="listing-item__list with-banner" style="margin-left: 50px;" >
             <article class="media well listing-item listing-item__jobs listing-item__featured"*ngFor="let E of Offres._embedded.offreEntities">
               <div class="media-left listing-item__logo">
-                <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
+                <a [routerLink]="['/offre']"
                   tabindex="-1">
                   <img class="media-object profile__img-company"
                     src="https://www.stage.fr/files/pictures/flateo_VHQ.png" alt="FLATEO">
@@ -102,7 +102,7 @@
                   </div>
                 </div>
                 <div class="media-heading listing-item__title">
-                  <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
+                  <a [routerLink]="['/offre']"
                     class="link">{{E.titre}}</a>
                 </div>
 

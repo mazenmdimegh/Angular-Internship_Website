@@ -25,6 +25,7 @@ import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entre
 import { FavorisComponent } from './favoris/favoris.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './chat/chat.component';
+import { OffreComponent } from './offre/offre.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ChatComponent } from './chat/chat.component';
     FormCondidatComponent,
     FormEntrepreneurComponent,
     FavorisComponent,
-    ChatComponent
+    ChatComponent,
+    OffreComponent
   ],
   imports: [
     BrowserModule,
