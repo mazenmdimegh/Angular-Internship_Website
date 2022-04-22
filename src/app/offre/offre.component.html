@@ -57,6 +57,7 @@
         </div>
       </div>
     </div>
+    
     <!-- SVG separator -->
 
     <!-- tttttttttttttttttttttttttttt -->
@@ -90,11 +91,127 @@
                 </a>
               </div>
             </div>
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" style="text-align: center;">Mes informations</h4>
+                <button type="button" class="btn-close" aria-label="Close"
+                  (click)="modal.dismiss('Cross click')"></button>
+              </div>
+              <div class="modal-body" style="margin: auto;">
+                <form [formGroup]="registrationForm">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Photo de profil</label>
+                      <div>
+                        <img src="../../assets/img/brand/mazen.jpg" style="width:128px; height:128px;" alt="picture">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Nom</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Nom">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Prénom</label>
+                      <input type="text" class="form-control" id="inputPassword4" placeholder="Prénom">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Adresse email</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="email">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Téléphone</label>
+                      <input type="text" class="form-control" id="inputPassword4" placeholder="tel">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Localisation</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="adresse">
+                    </div>
+                  </div>
+                  <hr>
+                  <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Mon parcours</h4>
+                  <label for="inputEmail4">Titre de mon profil</label>
+                  <div class="input-group">
+
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="profil">
+                  </div>
+                  <div class="form-row" style="margin-top: 20px;">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Joindre votre CV</label>
+                      <div style="border-radius: 20px; padding: 8px 4px 9px 5px;">
+                        <input type="file" id="avatar" name="avatar" accept="pdf">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Lettre de motivation</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <hr>
+                  <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Ma présence sur
+                    internet</h4>
+                  <label for="inputEmail4">Site internet</label>
+                  <div class="input-group">
+
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+                  </div>
+                  <label for="inputEmail4">LinkedIn</label>
+                  <div class="input-group">
+
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+                  </div>
+                  <label for="inputEmail4">Github</label>
+                  <div class="input-group">
+
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+                  </div>
+                  <hr>
+                  <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Conditions Générales
+                    d'utilisation</h4>
+                  <div>
+                    <input type="checkbox" id="coding" name="interest" value="C1">
+                    <label for="condition1" style="margin: 0 0 0 10px ;">j'ai lu et j'accepte les CGU de
+                      InternUp</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="coding" name="interest" value="C1">
+                    <label for="condition1" style="margin: 0 0 0 10px ;">j'accepte que l'entreprise conserve mes données
+                      personnelles </label><br>
+                    pendant une durées de 2 ans afin d'etre recontacté(e) pour de nouvelles opportunités.
+                  </div>
+
+                  <p></p>
+                  <div>
+                    <button type="submit" class="btn btn-primary" style="border-radius: 20px;">Postuler</button>
+                  </div>
+                </form>
+              </div>
+
+            </ng-template>
             <div class="f">
               <div class="f" style="width: 100%;">
-                <button class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0 b"
-                  >Postuler</button>
-                <p>n'attendez pas pour vous garentir ce post</p>
+                <button type="button" class="btn1 button1" (click)="openScrollableContent(content)">
+                  Postuler
+                </button>
+
+
+                <div class="overlay" *ngIf="popup">
+                  <div class="popup">
+                    <h2 style=" font-family: verdana;
+                    font-size: 300%; text-align: center;"> Postuler </h2>
+                    <hr>
+                    <a class="close" (click)="popup = false">&times;</a>
+                    <div class="content">
+
+                    </div>
+                  </div>
+                </div>
+                <p style="margin: 22px 0px 0px 14px;">n'attendez pas pour vous garentir ce post</p>
                 <hr style="margin:0">
               </div>
 

@@ -15,7 +15,13 @@ export class FormCondidatComponent implements OnInit {
     nom:[''],
     prenom:[''],
     email:[''],
-    tel:['']
+    password:[''],
+    ncin:[''],
+    tel:[''],
+    faculte:[''],
+    promotion:[''],
+    pj:[''],
+    etat:['']
   })
   ngOnInit(): void {
   }
@@ -24,6 +30,8 @@ export class FormCondidatComponent implements OnInit {
     this.authService.AddStudent(this.registrationForm.value)
     .subscribe(data=>{
       console.log("success")
+     
+     
     })
   }
 

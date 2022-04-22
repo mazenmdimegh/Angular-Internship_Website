@@ -3,69 +3,109 @@
     <div class="wrapper wrapper--w680">
       <div class="card card-4">
         <div class="card-body">
-          <h2 class="title">Registration Form</h2>
+          <h2 class="title">Créer un profil Candidat</h2>
           <form [formGroup]="registrationForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Nom</label>
+                <label for="inputEmail4">Nom *</label>
                 <input type="email" class="form-control" formControlName="nom" id="inputEmail4" placeholder="Nom">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Prénom</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Prénom">
+                <label for="inputPassword4">Prénom *</label>
+                <input type="text" class="form-control" formControlName="prenom" id="inputPassword4"
+                  placeholder="Prénom">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">N°CIN</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="N Cin">
+                <label for="inputEmail4">N°CIN *</label>
+                <input type="email" class="form-control" formControlName="ncin" id="inputEmail4" placeholder="N Cin">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">N°Telephone</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="N Telephone">
+                <label for="inputPassword4">N°Telephone *</label>
+                <input type="text" class="form-control" formControlName="tel" id="inputPassword4"
+                  placeholder="N Telephone">
               </div>
             </div>
-            <p>Birth of Date</p>
-            <div class="input-group">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Birth of Date *</label>
+                <div class="input-group">
 
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
-                #d="ngbDatepicker">
-              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"
-                style="padding: 0 4px 0 8px;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px;">
-                  <path
-                    d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z" />
-                </svg></button>
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                    #d="ngbDatepicker">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"
+                    style="padding: 0 4px 0 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg
+                     " viewBox="0 0 448 512" style="width: 20px;">
+                      <path
+                        d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z" />
+                    </svg></button>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Gouvernorat *</label>
+                <select id="inputState" class="form-control">
+                  <option value="">Sélectionnez Gouvernorat</option>
+                  <option value="710">Ariana</option>
+                  <option value="711">Béja</option>
+                  <option value="712">Ben Arous</option>
+                  <option value="713">Bizerte</option>
+                  <option value="714">Gabès</option>
+                  <option value="715">Gafsa</option>
+                  <option value="716">Jendouba</option>
+                  <option value="717">Kairouan</option>
+                  <option value="718">Kasserine</option>
+                  <option value="719">Kébili</option>
+                  <option value="720">Le Kef</option>
+                  <option value="721">Mahdia</option>
+                  <option value="722">La Manouba</option>
+                  <option value="723">Médenine</option>
+                  <option value="724">Monastir</option>
+                  <option value="725">Nabeul</option>
+                  <option value="726">Sfax</option>
+                  <option value="727">Sidi Bouzid</option>
+                  <option value="728">Siliana</option>
+                  <option value="729">Sousse</option>
+                  <option value="730">Tataouine</option>
+                  <option value="731">Tozeur</option>
+                  <option value="732">Tunis</option>
+                  <option value="733">Zaghouan</option>
+                </select>
+              </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Faculté</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Faculté">
+                <label for="inputEmail4">Faculté *</label>
+                <input type="email" class="form-control" formControlName="faculte" id="inputEmail4"
+                  placeholder="Faculté">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Titre de mon profil</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Promotion">
+                <label for="inputPassword4">Promotion *</label>
+                <input type="text" class="form-control" formControlName="promotion" id="inputPassword4"
+                  placeholder="Promotion">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="inputEmail4">Email *</label>
+                <input type="text" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="inputPassword4">Password *</label>
+                <input type="password" class="form-control" formControlName="password" id="inputPassword4"
+                  placeholder="Password">
               </div>
             </div>
             <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
-                  Check me out
+                  J'accepte les conditions d'utilisation *
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" (click)="sub()" class="btn btn-primary">Sign in</button>
           </form>
 
 
