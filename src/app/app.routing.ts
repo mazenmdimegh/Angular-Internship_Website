@@ -17,6 +17,9 @@ import { FormEntrepreneurComponent } from './signup/form-entrepreneur/form-entre
 import { FavorisComponent } from './favoris/favoris.component';
 import { ChatComponent } from './chat/chat.component';
 import { OffreComponent } from './offre/offre.component';
+import { CandidatComponent } from './candidat/candidat.component';
+import { CandidatCandidatureComponent } from './candidat-candidature/candidat-candidature.component';
+import { CandidatNotificationComponent } from './candidat-notification/candidat-notification.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -35,6 +38,11 @@ const routes: Routes =[
     {path:'alternance',            component: AlternanceComponent},
     {path:'freelance',            component: FreelanceComponent},
     { path: 'entreprises',          component: EntreprisesComponent },
+    { path: 'candidat',  component: CandidatComponent ,
+    children:[
+      {path:'candidature',component: CandidatCandidatureComponent},
+      {path:'notification',component: CandidatNotificationComponent}
+    ]},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -48,3 +56,8 @@ const routes: Routes =[
   ],
 })
 export class AppRoutingModule { }
+export const routingComponents = [
+  CandidatComponent,
+  CandidatCandidatureComponent,
+  CandidatNotificationComponent
+]

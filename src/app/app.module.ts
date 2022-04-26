@@ -26,6 +26,9 @@ import { FavorisComponent } from './favoris/favoris.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './chat/chat.component';
 import { OffreComponent } from './offre/offre.component';
+import { CandidatComponent } from './candidat/candidat.component';
+import { CandidatNotificationComponent } from './candidat-notification/candidat-notification.component';
+import { CandidatCandidatureComponent } from './candidat-candidature/candidat-candidature.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { OffreComponent } from './offre/offre.component';
     FormEntrepreneurComponent,
     FavorisComponent,
     ChatComponent,
-    OffreComponent
+    OffreComponent,
+    CandidatComponent,
+    CandidatNotificationComponent,
+    CandidatCandidatureComponent
   ],
   imports: [
     BrowserModule,
