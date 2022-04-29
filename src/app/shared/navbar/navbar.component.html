@@ -130,7 +130,7 @@
             </div>
           </div>
         </li>
-        <li  *ngIf="LoggedIn"class="nav-item">
+        <li  *ngIf="LoggedIn" class="nav-item">
           <div class="col">
             <div ngbDropdown class="d-inline-block">
               
@@ -150,12 +150,12 @@
           <div class="col">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-primary" id="dropdownBasic1"
-                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle><img style="width: 30px;" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">Mazen</button>
+                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle><img style="width: 30px;" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">{{username}}</button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button ngbDropdownItem [routerLink]="['/formE']">Settings</button>
                 <button ngbDropdownItem [routerLink]="['/formC']">Support</button>
                 <button ngbDropdownItem [routerLink]="['/formC']">About Us</button>
-                <button ngbDropdownItem [routerLink]="['/formC']">Déconnecter</button>
+                <button ngbDropdownItem (click)="logout()">Déconnecter</button>
               </div>
             </div>
           </div>

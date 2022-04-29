@@ -4,36 +4,57 @@
       <div class="card card-4">
         <div class="card-body">
           <h2 class="title">Créer un profil Candidat</h2>
-          <form [formGroup]="registrationForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Nom *</label>
-                <input type="email" class="form-control" formControlName="nom" id="inputEmail4" placeholder="Nom">
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+            <div class="form-group">
+              <label for="inputEmail4">Nom d'utilisateur</label>
+              <input type="email" class="form-control" type="text" class="form-control" name="username"
+                [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" id="inputNom4"
+                placeholder="Nom">
+            </div>
+            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+              <div *ngIf="username.errors.required">Username is required</div>
+              <div *ngIf="username.errors.minlength">
+                Username must be at least 3 characters
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Prénom *</label>
-                <input type="text" class="form-control" formControlName="prenom" id="inputPassword4"
-                  placeholder="Prénom">
+              <div *ngIf="username.errors.maxlength">
+                Username must be at most 20 characters
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">N°CIN *</label>
-                <input type="email" class="form-control" formControlName="ncin" id="inputEmail4" placeholder="N Cin">
+                <input type="number" class="form-control" name="ncin" [(ngModel)]="form.ncin" required #ncin="ngModel"
+                  id="inputncin4" placeholder="N°Cin">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">N°Telephone *</label>
-                <input type="text" class="form-control" formControlName="tel" id="inputPassword4"
-                  placeholder="N Telephone">
+                <input type="number" class="form-control" name="tel" [(ngModel)]="form.tel" required #tel="ngModel"
+                  id="inputtel4" placeholder="N°Telephone">
               </div>
             </div>
+            <div class="form-row">
+              <div class="alert-danger" *ngIf="ncin.errors && f.submitted">
+                <div *ngIf="ncin.errors.required">ncin is required</div>
+                <div *ngIf="ncin.errors.maxlength">
+                  ncin must be at 8 digits
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="tel.errors && f.submitted">
+                <div *ngIf="tel.errors.required">telephone is required</div>
+                <div *ngIf="tel.errors.min">
+                  tel must be at 8 digits
+                </div>
+              </div>
+            </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Birth of Date *</label>
                 <div class="input-group">
 
-                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
-                    #d="ngbDatepicker">
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="datenaiss" [(ngModel)]="form.datenaiss"
+                    required #datenaiss="ngModel" ngbDatepicker #d="ngbDatepicker">
                   <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"
                     style="padding: 0 4px 0 8px;">
                     <svg xmlns="http://www.w3.org/2000/svg
@@ -45,16 +66,17 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputState">Gouvernorat *</label>
-                <select id="inputState" class="form-control">
-                  <option value="">Sélectionnez Gouvernorat</option>
-                  <option value="710">Ariana</option>
+                <select id="inputState" name="gouvernorat" [(ngModel)]="form.gouvernorat" required
+                  #gouvernorat="ngModel" class="form-control">
+                  <option value="d">Sélectionnez Gouvernorat</option>
+                  <option value="Ariana">Ariana</option>
                   <option value="711">Béja</option>
                   <option value="712">Ben Arous</option>
                   <option value="713">Bizerte</option>
                   <option value="714">Gabès</option>
                   <option value="715">Gafsa</option>
-                  <option value="716">Jendouba</option>
-                  <option value="717">Kairouan</option>
+                  <option value="Jendouba">Jendouba</option>
+                  <option value="Kairouan">Kairouan</option>
                   <option value="718">Kasserine</option>
                   <option value="719">Kébili</option>
                   <option value="720">Le Kef</option>
@@ -74,27 +96,59 @@
                 </select>
               </div>
             </div>
+            <div class="alert-danger" *ngIf="gouvernorat.errors && f.submitted">
+              <div *ngIf="gouvernorat.errors.required">Gouvernorat is required</div>
+              
+            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Faculté *</label>
-                <input type="email" class="form-control" formControlName="faculte" id="inputEmail4"
-                  placeholder="Faculté">
+                <input type="email" class="form-control" name="faculte" [(ngModel)]="form.faculte" required
+                  minlength="3" maxlength="20" #faculte="ngModel" id="inputfaculte4" placeholder="Faculté">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Promotion *</label>
-                <input type="text" class="form-control" formControlName="promotion" id="inputPassword4"
-                  placeholder="Promotion">
+                <input type="text" class="form-control" name="promotion" [(ngModel)]="form.promotion" required
+                  minlength="3" #promotion="ngModel" id="inputpromotion4" placeholder="Promotion">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="alert-danger" *ngIf="faculte.errors && f.submitted">
+                <div *ngIf="faculte.errors.required">faculte is required</div>
+                <div *ngIf="faculte.errors.minlength">
+                  Faculte must be at least 3 characters
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="promotion.errors && f.submitted">
+                <div *ngIf="promotion.errors.required">promotion is required</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email *</label>
-                <input type="text" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email">
+                <input type="text" class="form-control" type="email" class="form-control" name="email"
+                  [(ngModel)]="form.email" required email #email="ngModel" id="inputEmail4" placeholder="Email">
               </div>
+
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password *</label>
-                <input type="password" class="form-control" formControlName="password" id="inputPassword4"
+                <input type="password" class="form-control" type="password" class="form-control" name="password"
+                  [(ngModel)]="form.password" required minlength="6" #password="ngModel" id="inputPassword4"
                   placeholder="Password">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
               </div>
             </div>
             <div class="form-group">
@@ -105,8 +159,14 @@
                 </label>
               </div>
             </div>
-            <button type="submit" (click)="sub()" class="btn btn-primary">Sign in</button>
+            <div class="alert bg-danger" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br />{{ errorMessage }}
+            </div>
+            <button class="btn btn-primary" (click)="sub()">Sign in</button>
           </form>
+          <div class="alert alert-success" *ngIf="isSuccessful">
+            Your registration is successful!
+          </div>
 
 
           <!-- <hr />
