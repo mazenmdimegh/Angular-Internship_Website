@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-form-entrepreneur',
@@ -18,11 +19,12 @@ export class FormEntrepreneurComponent implements OnInit {
     tel: null,
     gouvernorat: null,
   };
+  submitted=false;
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
   public societee = false;
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router,private tokenStorage: TokenStorageService) { }
   registrationForm = this.fb.group({
     nom: [''],
     prenom: [''],
@@ -37,6 +39,9 @@ export class FormEntrepreneurComponent implements OnInit {
     zip: []
   })
   ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.router.navigate(['home'])
+    }
   }
   onChange(deviceValue) {
     console.log(deviceValue);
@@ -63,16 +68,19 @@ export class FormEntrepreneurComponent implements OnInit {
     //   }
     // );
   }
+  a(){
+    this.isSuccessful = true;
+    this.submitted=false;
+  }
   sub() {
     const { username, email, password, societe, ncin, tel, gouvernorat } = this.form;
     console.log(username, email, password, societe, ncin, tel, gouvernorat);
-
     this.authService.registerE(username, email, password, ncin, tel, gouvernorat, societe).subscribe(
       data => {
-        console.log(data);
-        this.isSuccessful = true;
+        this.submitted=true;
+        setTimeout(() => this.a(), 2000);
         this.isSignUpFailed = false;
-        this.router.navigate(['login']);
+        setTimeout(() => this.router.navigate(['login']), 3000);
       },
       err => {
         this.errorMessage = err.error.message;

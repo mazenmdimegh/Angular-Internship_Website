@@ -19,7 +19,11 @@ import { ChatComponent } from './chat/chat.component';
 import { OffreComponent } from './offre/offre.component';
 import { CandidatComponent } from './candidat/candidat.component';
 import { CandidatCandidatureComponent } from './candidat-candidature/candidat-candidature.component';
-import { CandidatNotificationComponent } from './candidat-notification/candidat-notification.component';
+import { CandidatCompteComponent } from './candidat-compte/candidat-compte.component';
+import { CandidatFavorisComponent } from './candidat-favoris/candidat-favoris.component';
+import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
+import { EntrepreneurCompteComponent } from './entrepreneur-compte/entrepreneur-compte.component';
+import { EntrepreneurOffreComponent } from './entrepreneur-offre/entrepreneur-offre.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -40,8 +44,14 @@ const routes: Routes =[
     { path: 'entreprises',          component: EntreprisesComponent },
     { path: 'candidat',  component: CandidatComponent ,
     children:[
-      {path:'candidature',component: CandidatCandidatureComponent},
-      {path:'notification',component: CandidatNotificationComponent}
+      {path:'candidature',component: CandidatCandidatureComponent,},
+      {path:'compte',component: CandidatCompteComponent,},
+      {path:'favoriis',component: CandidatFavorisComponent}
+    ]},
+    { path: 'entrepreneur',  component: EntrepreneurComponent ,
+    children:[
+      {path:'comptee',component: EntrepreneurCompteComponent},
+      {path:'offree',component: EntrepreneurOffreComponent}
     ]},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -59,5 +69,9 @@ export class AppRoutingModule { }
 export const routingComponents = [
   CandidatComponent,
   CandidatCandidatureComponent,
-  CandidatNotificationComponent
+  CandidatCompteComponent,
+  CandidatFavorisComponent,
+  EntrepreneurComponent,
+  EntrepreneurCompteComponent,
+  EntrepreneurOffreComponent
 ]

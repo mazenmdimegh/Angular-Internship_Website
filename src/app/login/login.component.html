@@ -4,7 +4,7 @@
 			<div class="card card-4">
 				<div class="card-body">
 					<h2 class="title">Registration Form</h2>
-					<form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+					<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
 						novalidate>
 						<div class="form-group">
 							<input type="text" class="form-control" type="text" class="form-control" name="username"
@@ -48,6 +48,7 @@
 							  Login failed: {{ errorMessage }}
 							</div>
 						  </div>
+						  <div *ngIf="submitted && !isLoginFailed" style="margin-left: 185px;" class="lds-dual-ring"></div>
 					</form>
 
 				</div>

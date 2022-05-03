@@ -95,17 +95,19 @@ background-color: #f9fafa;      ">
         <details open>
           <summary>Secteur</summary>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" (click)="check('Management')" id="customCheck2" type="checkbox">
-            <label class="custom-control-label" for="customCheck2">
+            <input class="custom-control-input" (click)="check('Management')" id="customCheck1" type="checkbox">
+            <label class="custom-control-label" for="customCheck1">
               <span>Management</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" (click)="check('RH')" id="customCheck1" type="checkbox">
-            <label class="custom-control-label" for="customCheck1">
+            <input class="custom-control-input" (click)="check('RH')" id="customCheck2" type="checkbox">
+            <label class="custom-control-label" for="customCheck2">
               <span>RH</span>
             </label>
           </div>
+         
+         
           <div class="custom-control custom-checkbox mb-3">
             <input class="custom-control-input" (click)="check('Informatique')" id="customCheck3" type="checkbox">
             <label class="custom-control-label" for="customCheck3">
@@ -119,7 +121,7 @@ background-color: #f9fafa;      ">
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" (click)="check('Gestion')" id="customCheck5" type="checkbox">
+            <input class="custom-control-input" (click)="check('Gestion')"id="customCheck5" type="checkbox">
             <label class="custom-control-label" for="customCheck5">
               <span>Gestion</span>
             </label>
@@ -130,6 +132,7 @@ background-color: #f9fafa;      ">
               <span>Agrecologie</span>
             </label>
           </div>
+         
           <div class="custom-control custom-checkbox mb-3">
             <input class="custom-control-input"(click)="check('Securité')" id="customCheck7" type="checkbox">
             <label class="custom-control-label" for="customCheck7">
@@ -152,20 +155,20 @@ background-color: #f9fafa;      ">
         <details open>
           <summary>Lieu</summary>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck1" type="checkbox">
-            <label class="custom-control-label" for="customCheck1">
+            <input class="custom-control-input" (click)="check2('Ariana')" id="customCheck1a" type="checkbox">
+            <label class="custom-control-label" for="customCheck1a">
               <span>Ariana</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck2" type="checkbox">
-            <label class="custom-control-label" for="customCheck2">
+            <input class="custom-control-input" id="customCheck2a" type="checkbox">
+            <label class="custom-control-label" for="customCheck2a">
               <span>Béja</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck3" type="checkbox">
-            <label class="custom-control-label" for="customCheck3">
+            <input class="custom-control-input" (click)="check2('Ben Arous')" id="customCheck3a" type="checkbox">
+            <label class="custom-control-label" for="customCheck3a">
               <span>Ben Arous</span>
             </label>
           </div>
@@ -194,113 +197,119 @@ background-color: #f9fafa;      ">
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck8" type="checkbox">
+            <label class="custom-control-label" for="customCheck8">
+              <span>Kairouan</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck9" type="checkbox">
+            <label class="custom-control-label" for="customCheck9">
+              <span>Kasserine</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck10" type="checkbox">
+            <label class="custom-control-label" for="customCheck10">
+              <span>Kébili</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck11" type="checkbox">
+            <label class="custom-control-label" for="customCheck11">
+              <span>Le Kef</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck11" type="checkbox">
+            <label class="custom-control-label" for="customCheck11">
+              <span>Mahdia</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck12" type="checkbox">
+            <label class="custom-control-label" for="customCheck12">
+              <span>La Manouba</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck13" type="checkbox">
+            <label class="custom-control-label" for="customCheck13">
+              <span>Médenine</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck14" type="checkbox">
+            <label class="custom-control-label" for="customCheck14">
+              <span>Monastir</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck15" type="checkbox">
+            <label class="custom-control-label" for="customCheck15">
+              <span>Nabeul</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck16" type="checkbox">
+            <label class="custom-control-label" for="customCheck16">
+              <span>Sfax</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck17" type="checkbox">
+            <label class="custom-control-label" for="customCheck17">
+              <span>Sidi Bouzid</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck18" type="checkbox">
+            <label class="custom-control-label" for="customCheck18">
+              <span>Siliana</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck19" type="checkbox">
+            <label class="custom-control-label" for="customCheck19">
+              <span>Sousse</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck20" type="checkbox">
+            <label class="custom-control-label" for="customCheck20">
+              <span>Tataouine</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck21" type="checkbox">
+            <label class="custom-control-label" for="customCheck21">
+              <span>Tozeur</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck7" type="checkbox">
-            <label class="custom-control-label" for="customCheck7">
-              <span>Jendouba</span>
+            <input class="custom-control-input" id="customCheck22" type="checkbox">
+            <label class="custom-control-label" for="customCheck22">
+              <span>Tunis</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck22" type="checkbox">
+            <label class="custom-control-label" for="customCheck22">
+              <span>Zaghouan</span>
             </label>
           </div>
         </details>
         <details open>
           <summary>Type</summary>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck1" type="checkbox">
-            <label class="custom-control-label" for="customCheck1">
+            <input class="custom-control-input" (click)="check3('Ingénierie')" id="customCheck1b" type="checkbox">
+            <label class="custom-control-label" for="customCheck1b">
               <span>Ingénierie</span>
             </label>
           </div>
           <div class="custom-control custom-checkbox mb-3">
-            <input class="custom-control-input" id="customCheck2" type="checkbox">
-            <label class="custom-control-label" for="customCheck2">
+            <input class="custom-control-input"  (click)="check3('Master')" id="customCheck2b" type="checkbox">
+            <label class="custom-control-label" for="customCheck2b">
               <span>Master</span>
             </label>
           </div>
@@ -352,8 +361,19 @@ background-color: #f9fafa;      ">
           </label>
         </div> -->
       </div>
+      <div *ngIf="this.Offres.length==0">
+        <img style="display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 34%;" src="../../assets/img/brand/err.webp">
+        <h5 style="text-align: center">
+          Nous n’avons pas trouvé de'Alternance pour votre recherche
+        </h5>
+        
+      </div>
 
       <div style="display: grid;background-color: #ffffff;">
+
         <section class="main-sections listing__featured">
           <div class="container container-fluid listing">
             <h4 class="listing__title with-banner">

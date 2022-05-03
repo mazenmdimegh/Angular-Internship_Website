@@ -24,6 +24,7 @@ export class CandidatComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.router.navigate(['candidat/compte'])
   }
   
   compte(){

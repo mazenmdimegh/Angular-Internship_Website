@@ -1,0 +1,156 @@
+<div class="sc-cxpSdN sc-iIUQWv hdl9e2-6 dujlTa eslXKg">
+    <div class="sc-1b6z8iw-0 gPRdtP">
+    <div id="prc-19-1-1" data-prerendered-border="true" style="margin: 0 100px 0 0;">
+        <article class="t66if1-0 cxJSJt">
+            <nav class="zd60jn-0 kevoHx">
+                <ol data-testid="applications-nav-links-0" class="zd60jn-1 hknAtW">
+                    <li class="zd60jn-2 ifnPCt"><a
+                            data-testid="applications-nav-links-0-all"
+                            class="zd60jn-4 hxJOlv"
+                            (click)="mcompte()"><span>Mon Compte</span></a></li>
+                    <li class="zd60jn-2 ifnPCt"><a
+                            data-testid="applications-nav-links-0-waiting"
+                            class="zd60jn-4 hxJOlv"
+                            (click)="param()"><span>Paramètre</span></a></li>
+                   
+                  
+                </ol>
+             
+            </nav>
+        </article>
+    </div>
+  </div>
+             
+    <div class="modal-body" style="margin: auto;" *ngIf='moncompte'>
+    <form [formGroup]="registrationForm" style="margin-left: 290px; margin-right: 250px; margin-top:-149px; background-color: white;">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="margin: 0 0 0 365px; white-space: nowrap;">Photo de profil</label>
+          <div>
+            <img src="../../assets/img/brand/mazen.jpg" style="width:128px; height:128px; margin: 0 0 0 350px" alt="picture">
+          </div>
+        </div>
+      </div>
+      <div class="form-row" style="padding: 0 18px 0 18px;">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" style="margin-right: 800px;">Nom</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Nom">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Prénom</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Prénom">
+        </div>
+      </div>
+      <div class="form-row" style="padding: 0 18px 0 18px;">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" style="margin-right:800px; white-space: nowrap;">Adresse email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4" >Téléphone</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="tel">
+        </div>
+      </div>
+      <div class="form-row" style="padding: 0 18px 0 18px;">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" style="margin-right: 700px;">Localisation</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="adresse">
+        </div>
+      </div>
+      <hr>
+      <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Mon parcours</h4>
+      <label for="inputEmail4" style="margin-right: 600px;">Titre de mon profil</label>
+      <div class="input-group" style="padding: 0 18px 0 18px;">
+  
+        <input type="text" class="form-control" id="inputPassword4" placeholder="profil">
+      </div>
+      <div class="form-row" style="margin-top: 20px;">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" style="margin-right: 220px; white-space: nowrap;">Joindre votre CV</label>
+          <div style="border-radius: 20px; padding: 8px 4px 9px 5px;">
+            <input type="file" id="avatar" name="avatar" accept="pdf">
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding: 0 18px 0 18px;">
+        <label for="exampleFormControlTextarea1" style="margin-right: 800px; white-space: nowrap;">Lettre de motivation</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="padding: 0 18px 0 18px;"></textarea>
+      </div>
+      <hr>
+      <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Ma présence sur
+        internet</h4>
+      <label for="inputEmail4" style="margin-right: 630px; white-space: nowrap;">Site internet</label>
+      <div class="input-group" style="padding: 0 18px 0 18px;">
+  
+        <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+      </div>
+      <label for="inputEmail4" style="margin-right: 650px;">LinkedIn</label>
+      <div class="input-group" style="padding: 0 18px 0 18px;">
+  
+        <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+      </div>
+      <label for="inputEmail4" style="margin-right: 650px;">Github</label>
+      <div class="input-group" style="padding: 0 18px 0 18px;">
+  
+        <input type="text" class="form-control" id="inputPassword4" placeholder="https://">
+      </div>
+      <hr>
+      <h4 class="modal-title" style="padding: 0px 0 17px 0; margin: 0px 0px 0 -10px;">Conditions Générales
+        d'utilisation</h4>
+      <div style="margin: 0 600px 0 0px; white-space: nowrap;">
+        <input type="checkbox" id="coding" name="interest" value="C1" style="margin-left: 10px">
+        <label for="condition1" style="margin: 0 0 0 10px ;">j'ai lu et j'accepte les CGU de
+          InternUp</label>
+      </div>
+      <div style="margin: 0 600px 0 0px; white-space: nowrap;">
+        <input type="checkbox" id="coding" name="interest" value="C1" style="margin-left: 10px">
+        <label for="condition1" style="margin: 0 0 0 10px ;">j'accepte que l'entreprise conserve mes données
+          personnelles </label><br>
+            pendant une durées de 2 ans afin d'etre recontacté(e) pour de nouvelles opportunités.
+      </div>
+  
+      <p></p>
+      <div>
+        <button type="submit" class="btn btn-primary" style="border-radius: 20px; margin-bottom: 17px;">Modifier</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-body" style="margin: auto;" *ngIf='parametre'>
+    <form [formGroup]="registrationForm" style="margin-left: 290px; margin-right: 250px; margin-top:-149px; background-color: white;">
+      <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label style="margin: 16px 700px 0 14px;     font-size: larger; font-family: cursive; font-weight: bold; white-space: nowrap;">Nouveau mot de passe</label>
+                      
+                    </div>
+                  </div>
+                  <div class="form-row" style="padding: 0 18px 0 18px;">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4" style="margin-right: 800px; white-space: nowrap; ">mot de passe actuel</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Nom">
+                    </div>
+                   
+                  </div>
+                  <div class="form-row" style="padding: 0 18px 0 18px;">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4" style="margin-right:800px; white-space: nowrap;">nouveau mot de passe</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="email">
+                    </div>
+                    
+                  </div>
+                  <div class="form-row" style="padding: 0 18px 0 18px;">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4" style="margin-right: 700px; white-space: nowrap; ">confirmer votre mot de passe</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="adresse">
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  <p></p>
+                  <div>
+                    <button type="submit" class="btn btn-primary" style="border-radius: 20px; margin-bottom: 17px;">Modifier</button>
+                  </div>
+                </form>
+    </div>
+  
+  </div>
+  
