@@ -3,6 +3,8 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OffreService } from 'src/app/services/offre.service';
+import { stringify } from 'querystring';
 
 @Component({
     selector: 'app-navbar',
@@ -49,9 +51,13 @@ export class NavbarComponent implements OnInit {
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
     public LoggedIn = false;
+    public isSuccessful = false;
+    public isSignUpFailed = false
     roles: string[] = [];
     username = "";
-    constructor(public location: Location, private router: Router, private tokenStorage: TokenStorageService, private modalService: NgbModal) {
+    id = "";
+    submitted = false;
+    constructor(public location: Location, private router: Router, private tokenStorage: TokenStorageService, private modalService: NgbModal, private offreservice: OffreService) {
     }
 
     ngOnInit() {
@@ -82,6 +88,8 @@ export class NavbarComponent implements OnInit {
 
             console.log(this.roles[0])
             this.username = user.username;
+            this.id = user.id;
+            console.log(this.id)
         }
     }
     openScrollableContent(quanticfy) {
@@ -111,30 +119,34 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['home'])
         window.location.reload();
     }
+    a() {
+        this.isSuccessful = true;
+        this.submitted = false;
+    }
     onSubmit(): void {
         console.log("suuuuub")
-        // const { username, email, password , societe, ncin, tel, gouvernorat} = this.form;
-        //  console.log(username, email, password , societe,  ncin, tel, gouvernorat);
+        const { titre, duree, lieu, societe, service, edate, categorie, type, description } = this.form;
+        console.log(titre, duree, lieu, societe, service, edate, categorie, type, description);
 
-        // this.authService.registerE(username, email, password , societe, ncin, tel, gouvernorat).subscribe(
-        //   data => {
-        //     console.log(data);
-        //     this.isSuccessful = true;
-        //     this.isSignUpFailed = false;
-        //     this.router.navigate(['login']);
-        //   },
-        //   err => {
-        //     this.errorMessage = err.error.message;
-        //     this.isSignUpFailed = true;
-        //   }
-        // );
+        this.offreservice.AddOffre(parseInt(this.id), titre, description, duree, lieu, societe, service, categorie, edate.year + "-" + edate.month + "-" + edate.day, type).subscribe(
+            data => {
+                console.log(data);
+                this.isSignUpFailed = false;
+                this.submitted = true;
+                setTimeout(() => this.a(), 2000);
+                this.isSignUpFailed = false;
+                setTimeout(() => this.modalService.dismissAll(), 3000);
+            },
+            err => {
+                this.isSignUpFailed = true;
+            }
+        );
     }
     sub() {
         console.log("suuuuub222")
-        
-        const { titre, duree, lieu, societe, service, edate, categorie, type, description } = this.form;
-        // console.log(edate.year+"-"+edate.month+"-"+edate.day);
-        console.log(titre, duree, lieu, societe, service, edate, categorie, type, description);
-       
+
+        // const { titre, duree, lieu, societe, service, edate, categorie, type, description } = this.form;
+        // // console.log(edate.year+"-"+edate.month+"-"+edate.day);
+        // console.log(this.id, titre, duree, lieu, societe, service, edate, categorie, type, description);
     }
 }

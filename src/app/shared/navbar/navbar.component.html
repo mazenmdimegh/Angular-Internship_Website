@@ -1,10 +1,12 @@
 <ng-template #quanticfy let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" style="margin: 0 0 0 280px;">Ajouter offre</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <h4 class="modal-title" style="margin: auto;">Ajouter offre</h4>
+    <button type="button" aria-label="Close" class="" style="border: 0px;background-color: white;font-size: 22px;"(click)="modal.dismiss('Cross click')"><i _ngcontent-kdh-c124="" class="fa fa-close"></i>
+    </button>
+    
   </div>
   <div class="ab" style="display: flex;margin: auto;">
-    <div id="plist" class="people-list" style="margin: 72px 155px 0px 53px;width: 400px;">
+    <div id="plist" class="people-list" style="margin: 5px 155px 0px 53px;width: 400px;">
       <!-- <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <div class="chat-form">
 
@@ -150,8 +152,8 @@
         </div>
         <div class="form-group ">
           <label for="inputState">Lieu *</label>
-          <select id="inputState" required name="Lieu" [(ngModel)]="form.Lieu" required
-            #Lieu="ngModel" class="form-control">
+          <select id="inputState" required name="lieu" [(ngModel)]="form.lieu" required #lieu="ngModel"
+            class="form-control">
             <option value="d">Sélectionnez Lieu</option>
             <option value="Ariana">Ariana</option>
             <option value="711">Béja</option>
@@ -179,8 +181,8 @@
             <option value="733">Zaghouan</option>
           </select>
         </div>
-        <div class="alert-danger c" *ngIf="gouvernorat.errors && f.submitted">
-          <div *ngIf="gouvernorat.errors.required">Gouvernorat is required</div>
+        <div class="alert-danger c" *ngIf="lieu.errors && f.submitted">
+          <div *ngIf="lieu.errors.required">Gouvernorat is required</div>
 
         </div>
 
@@ -250,8 +252,8 @@
           <label for="inputEmail4">Birth of Date *</label>
           <div class="input-group">
 
-            <input class="form-control" placeholder="yyyy-mm-dd" name="date" #edate="ngModel" ngbDatepicker #d="ngbDatepicker"
-              [(ngModel)]="model" [(ngModel)]="form.edate">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="date" #edate="ngModel" ngbDatepicker
+              #d="ngbDatepicker" [(ngModel)]="model" [(ngModel)]="form.edate">
             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"
               style="padding: 0 4px 0 8px;">
               <svg xmlns="http://www.w3.org/2000/svg
@@ -264,8 +266,8 @@
 
         <div class="form-group">
           <label for="ienputState">Type*</label>
-          <select id="edinputState" (change)="onChange($event.target.value)" name="type"
-            [(ngModel)]="form.type" #type="ngModel" required class="form-control">
+          <select id="edinputState" (change)="onChange($event.target.value)" name="type" [(ngModel)]="form.type"
+            #type="ngModel" required class="form-control">
             <option value="" selected="selected">Sélectionnez Votre type</option>
             <option value="TELNET">Stage PFE</option>
             <option value="Auxiliance">Stage d'été</option>
@@ -280,8 +282,9 @@
 
         <div class="form-group">
           <label for="inputEmdail4">Description</label>
-          <textarea class="form-control" type="text" class="form-control" name="Description" [(ngModel)]="form.description" required
-          rows="4" cols="50" maxlength="249" #description="ngModel" id="inputNdom4" placeholder="Description"></textarea>
+          <textarea class="form-control" type="text" class="form-control" name="Description"
+            [(ngModel)]="form.description" required rows="4" cols="50" maxlength="249" #description="ngModel"
+            id="inputNdom4" placeholder="Description"></textarea>
         </div>
         <div class="alert-danger c" *ngIf="description.errors && f.submitted">
           <div *ngIf="description.errors.required">Description is required</div>
@@ -292,7 +295,7 @@
             Description must be at most 200 characters
           </div>
         </div>
-<!-- 
+        <!-- 
 
         <div class="form-group">
           <label for="inputEmail4">Nom d'utilisateur</label>
@@ -521,11 +524,15 @@
             </label>
           </div>
         </div> -->
-        <button type="submit" class="btn btn-primary" (click)="sub()">Sign in</button>
-        <div class="alert alert-success" *ngIf="isSuccessful">
-          Your registration is successful!
+        <div style="margin-left: 145px;">
+          <button  type="submit" class="btn btn-primary">Sign in</button>
         </div>
-        <div *ngIf="submitted && !isSignUpFailed" style="margin-left: 125px;" class="lds-dual-ring"></div>
+        
+        <div class="alert alert-success" style="text-align: center;" *ngIf="isSuccessful">
+          L'offre a été ajouter avec succès
+        </div>
+        <!-- <div  style="margin-left: 155px;" class="lds-dual-ring"></div> -->
+      <div *ngIf="submitted && !isSignUpFailed" style="margin-left: 155px;" class="lds-dual-ring"></div>
       </form>
     </div>
 
