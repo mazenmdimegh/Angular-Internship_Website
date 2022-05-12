@@ -3,7 +3,7 @@
     <!-- Hero for FREE version -->
     <section class="section   section-shaped">
       <!-- Background circles -->
-      <div class="shape shape-style-1 shape-primary" >
+      <div class="shape shape-style-1 shape-primary">
         <span class="span-150"></span>
         <span class="span-50"></span>
         <span class="span-50"></span>
@@ -17,10 +17,21 @@
       </div>
       <div class="">
         <div class="col px-0">
-          <div class="row align-items-center justify-content-center">
+          <div class="row align-items-center justify-content-center t">
             <div class="col-lg-6 text-center">
+              <p></p>
+              <p></p>
+              <h1 class="display-3  text-white" style="width: max-content; text-align: center; padding-left: 150px; ">
+                Offres de Stage </h1>
+              <p></p>
+              <h6 style="text-align: center; font-size: medium; color: #ffffff; ">Vous êtes à la recherche d’une
+                entreprise pour un contrat en alternance ? L’Etudiant vous propose des centaines d’offres de contrats en
+                apprentissage ou de contrats de professionnalisation ? Que vous recherchiez un poste d’apprenti en
+                ressources humaines, comptabilité, communication, marketing, informatique, commerce,
+                transport-logistique ou même ingénierie, nous vous avons sélectionné des centaines d’offres pouvant
+                correspondre à votre formation ou niveau d’études. Retrouvez, grâce à notre moteur de recherche, des
+                entreprises qui recrutent sur toutes la Tunisie.</h6>
 
-              
               <div class="btn-wrapper mt-5">
                 <div class="container  quick-search">
                   <div class="quick-search__wrapper">
@@ -55,7 +66,7 @@
 
 
 
-              
+
 
 
 
@@ -67,91 +78,381 @@
 
       <!-- tttttttttttttttttttttttttttt -->
 
-      
+
 
 
 
 
       <!-- tttttttttttttttttttttttttttt -->
     </section>
-    <div style="display: grid;background-color: #ebebeb;">
-      <section class="main-sections listing__featured">
-        <div class="container container-fluid listing">
-          <h4 class="listing__title with-banner">
-          </h4>
-          <div class="listing-item__list with-banner" style="margin-left: 50px;" >
-            <article class="media well listing-item listing-item__jobs listing-item__featured"*ngFor="let E of Offres._embedded.offreEntities">
-              <div class="media-left listing-item__logo">
-                <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
-                  tabindex="-1">
-                  <img class="media-object profile__img-company"
-                    src="https://www.stage.fr/files/pictures/flateo_VHQ.png" alt="FLATEO">
-                </a>
-              </div>
-              <div class="media-body">
-                <div class="media-right text-right">
-                  <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
-                    title="Sauvegarder" data-href="/saved-jobs/?id=744367&action=save&reload=✓" rel="nofollow"
-                    href="#"></a>
-                  <div class="listing-item__date">
-                    déc. 14, 2021
+    <div style="background-color: #f9fafa;">
+      <button class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0" style="left: 7vw;" (click)="disappear()">filtrer</button>
+    </div>
+    <div style="display: flex;background-color: #f9fafa;justify-content: center;">
+      <div *ngIf="disappea" class="col-lg-3 col-sm-6 mt-4 mt-md-0" style="padding-left: 12vw;    margin-top: 62px !important;
+background-color: #f9fafa;      ">
+        <!-- Radio buttons -->
+        <details open>
+          <summary>Secteur</summary>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check('Management')" id="customCheck1" type="checkbox">
+            <label class="custom-control-label" for="customCheck1">
+              <span>Management</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check('RH')" id="customCheck2" type="checkbox">
+            <label class="custom-control-label" for="customCheck2">
+              <span>RH</span>
+            </label>
+          </div>
+         
+         
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check('Informatique')" id="customCheck3" type="checkbox">
+            <label class="custom-control-label" for="customCheck3">
+              <span>Informatique</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check('Marketing')" id="customCheck4" type="checkbox">
+            <label class="custom-control-label" for="customCheck4">
+              <span>Marketing</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check('Gestion')"id="customCheck5" type="checkbox">
+            <label class="custom-control-label" for="customCheck5">
+              <span>Gestion</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input"(click)="check('Agrecologie')" id="customCheck6" type="checkbox">
+            <label class="custom-control-label" for="customCheck6">
+              <span>Agrecologie</span>
+            </label>
+          </div>
+         
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input"(click)="check('Securité')" id="customCheck7" type="checkbox">
+            <label class="custom-control-label" for="customCheck7">
+              <span>Securité</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input"(click)="check('Biologie')" id="customCheck8" type="checkbox">
+            <label class="custom-control-label" for="customCheck8">
+              <span>Biologie</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input"(click)="check('Comptabilité')" id="customCheck9" type="checkbox">
+            <label class="custom-control-label" for="customCheck9">
+              <span>Comptabilité</span>
+            </label>
+          </div>
+        </details>
+        <details open>
+          <summary>Lieu</summary>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check2('Ariana')" id="customCheck1a" type="checkbox">
+            <label class="custom-control-label" for="customCheck1a">
+              <span>Ariana</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck2a" type="checkbox">
+            <label class="custom-control-label" for="customCheck2a">
+              <span>Béja</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check2('Ben Arous')" id="customCheck3a" type="checkbox">
+            <label class="custom-control-label" for="customCheck3a">
+              <span>Ben Arous</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck4" type="checkbox">
+            <label class="custom-control-label" for="customCheck4">
+              <span>Bizerte</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck5" type="checkbox">
+            <label class="custom-control-label" for="customCheck5">
+              <span>Gabès</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck6" type="checkbox">
+            <label class="custom-control-label" for="customCheck6">
+              <span>Gafsa</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck7" type="checkbox">
+            <label class="custom-control-label" for="customCheck7">
+              <span>Jendouba</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck8" type="checkbox">
+            <label class="custom-control-label" for="customCheck8">
+              <span>Kairouan</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck9" type="checkbox">
+            <label class="custom-control-label" for="customCheck9">
+              <span>Kasserine</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck10" type="checkbox">
+            <label class="custom-control-label" for="customCheck10">
+              <span>Kébili</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck11" type="checkbox">
+            <label class="custom-control-label" for="customCheck11">
+              <span>Le Kef</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck11" type="checkbox">
+            <label class="custom-control-label" for="customCheck11">
+              <span>Mahdia</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck12" type="checkbox">
+            <label class="custom-control-label" for="customCheck12">
+              <span>La Manouba</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck13" type="checkbox">
+            <label class="custom-control-label" for="customCheck13">
+              <span>Médenine</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck14" type="checkbox">
+            <label class="custom-control-label" for="customCheck14">
+              <span>Monastir</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck15" type="checkbox">
+            <label class="custom-control-label" for="customCheck15">
+              <span>Nabeul</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck16" type="checkbox">
+            <label class="custom-control-label" for="customCheck16">
+              <span>Sfax</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck17" type="checkbox">
+            <label class="custom-control-label" for="customCheck17">
+              <span>Sidi Bouzid</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck18" type="checkbox">
+            <label class="custom-control-label" for="customCheck18">
+              <span>Siliana</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck19" type="checkbox">
+            <label class="custom-control-label" for="customCheck19">
+              <span>Sousse</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck20" type="checkbox">
+            <label class="custom-control-label" for="customCheck20">
+              <span>Tataouine</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck21" type="checkbox">
+            <label class="custom-control-label" for="customCheck21">
+              <span>Tozeur</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck22" type="checkbox">
+            <label class="custom-control-label" for="customCheck22">
+              <span>Tunis</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" id="customCheck22" type="checkbox">
+            <label class="custom-control-label" for="customCheck22">
+              <span>Zaghouan</span>
+            </label>
+          </div>
+        </details>
+        <details open>
+          <summary>Type</summary>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input" (click)="check3('Ingénierie')" id="customCheck1b" type="checkbox">
+            <label class="custom-control-label" for="customCheck1b">
+              <span>Ingénierie</span>
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input class="custom-control-input"  (click)="check3('Master')" id="customCheck2b" type="checkbox">
+            <label class="custom-control-label" for="customCheck2b">
+              <span>Master</span>
+            </label>
+          </div>
+          
+        </details>
+        <!-- <div class="mb-3">
+          <small class="text-uppercase font-weight-bold">Checkboxes</small>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck1" type="checkbox">
+          <label class="custom-control-label" for="customCheck1">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck2" type="checkbox">
+          <label class="custom-control-label" for="customCheck2">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck3" type="checkbox">
+          <label class="custom-control-label" for="customCheck3">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck4" type="checkbox">
+          <label class="custom-control-label" for="customCheck4">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck5" type="checkbox">
+          <label class="custom-control-label" for="customCheck5">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck6" type="checkbox">
+          <label class="custom-control-label" for="customCheck6">
+            <span>Unchecked</span>
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input class="custom-control-input" id="customCheck7" type="checkbox">
+          <label class="custom-control-label" for="customCheck7">
+            <span>Unchecked</span>
+          </label>
+        </div> -->
+      </div>
+      <div *ngIf="this.Offres.length==0">
+        <img style="display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 34%;" src="../../assets/img/brand/err.webp">
+        <h5 style="text-align: center">
+          Nous n’avons pas trouvé de'Alternance pour votre recherche
+        </h5>
+        
+      </div>
+
+      <div style="display: grid;background-color: #ffffff;">
+
+        <section class="main-sections listing__featured">
+          <div class="container container-fluid listing">
+            <h4 class="listing__title with-banner">
+            </h4>
+            <div class="listing-item__list with-banner" style="margin-left: 50px;">
+              <article class="media well listing-item listing-item__jobs listing-item__featured"
+                *ngFor="let E of Offres">
+                <div class="media-left listing-item__logo">
+                  <a [routerLink]="['/offre']" tabindex="-1">
+                    <img class="media-object profile__img-company"
+                      src="https://www.stage.fr/files/pictures/flateo_VHQ.png" alt="FLATEO">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="media-right text-right">
+                    <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
+                      title="Sauvegarder" data-href="/saved-jobs/?id=744367&action=save&reload=✓" rel="nofollow"
+                      href="#"></a>
+                    <div style="display: flex; float: right;">
+                     <div style="margin-top: 9px;   "> <span>{{E.date}}</span></div>
+                     <div> <button class="bt-fav" (click)="addFav(E.id)">  <i class="fa fa-heart-o"></i> </button></div>
+                    </div>
+                  </div>
+                  <div style="margin-top: 40px;">
+                  <div class="media-heading listing-item__title">
+                    <a [routerLink]="['/offre']" class="link">{{E.titre}}</a>
+                  </div>
+
+                  <div class="listing-item__info listing-item__info--item-salary-range clearfix">
+
+                  </div>
+                  <div class="listing-item__info clearfix">
+                    <span class="listing-item__info--item listing-item__info--item-company">
+                      {{E.societe}}
+                    </span>
+                    <span class="listing-item__info--item listing-item__info--item-location">
+                      {{E.lieu}}
+                    </span>
+                  </div>
+                  <div class="listing-item__desc">
+                    {{E.description}}
                   </div>
                 </div>
-                <div class="media-heading listing-item__title">
-                  <a [routerLink]="['/offre']"
-                    class="link">{{E.titre}}</a>
                 </div>
-
-                <div class="listing-item__info listing-item__info--item-salary-range clearfix">
-
-                </div>
-                <div class="listing-item__info clearfix">
-                  <span class="listing-item__info--item listing-item__info--item-company">
-                    {{E.societe}}
-                  </span>
-                  <span class="listing-item__info--item listing-item__info--item-location">
-                    {{E.lieu}}
-                  </span>
-                </div>
-                <div class="listing-item__desc">
-                  {{E.description}}
-                </div>
-              </div>
-            </article>
+              </article>
 
 
+            </div>
+            <div class="banner banner--right">
+              <!-- START DATA DRIVEN TAG -->
+              <script title='DataDriven' crossorigin='anonymous' async> document.ddSiteCltId = '';
+
+                document.ddSiteAnnId = ''; document.ddAnnRef = ''; document.ddSiteUsrId = '';
+
+                document.ddSiteEmId = ''; document.ddSitePhone = ''; document.ddSiteOrgn = '';
+
+                document.ddSiteCkie = '';
+                var ddeId = 0, ddscmdId = 128, ddsiteutil = window.location.hostname, dadriRef =
+
+                  document.referrer, ddr_tracking = null;
+                ddr_tracking = document.createElement('script');
+                ddr_tracking.type = 'text/javascript';
+                ddr_tracking.src = 'https://tags.data-driven.fr/tags?cch=' + Date.now() + '&h=' +
+
+                  ddsiteutil + '&v=1.03';
+                ddr_tracking.setAttribute('title', 'DDAppendScript');
+                document.body.appendChild(ddr_tracking);
+              </script>
+              <!-- END DATA DRIVEN TAG -->
+            </div>
           </div>
-          <div class="banner banner--right">
-            <!-- START DATA DRIVEN TAG -->
-            <script title='DataDriven' crossorigin='anonymous' async> document.ddSiteCltId = '';
-
-              document.ddSiteAnnId = ''; document.ddAnnRef = ''; document.ddSiteUsrId = '';
-
-              document.ddSiteEmId = ''; document.ddSitePhone = ''; document.ddSiteOrgn = '';
-
-              document.ddSiteCkie = '';
-              var ddeId = 0, ddscmdId = 128, ddsiteutil = window.location.hostname, dadriRef =
-
-                document.referrer, ddr_tracking = null;
-              ddr_tracking = document.createElement('script');
-              ddr_tracking.type = 'text/javascript';
-              ddr_tracking.src = 'https://tags.data-driven.fr/tags?cch=' + Date.now() + '&h=' +
-
-                ddsiteutil + '&v=1.03';
-              ddr_tracking.setAttribute('title', 'DDAppendScript');
-              document.body.appendChild(ddr_tracking);
-            </script>
-            <!-- END DATA DRIVEN TAG -->
-          </div>
-        </div>
-      </section>
-      <ul *ngIf='pages' class="nav nav-pills" style="display: flex;justify-content: center;">
-        <li [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages; let i=index" class="page-link">
-        <a class="clickable"(click)="onPageProduits(i) ">{{i}}</a> 
-        </li>
-    </ul>
+        </section>
+        <ul *ngIf='pages' class="nav nav-pills" style="display: flex;justify-content: center;">
+          <li [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages; let i=index" class="page-link">
+            <a class="clickable" (click)="onPageProduits(i) ">{{i}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
-
   </div>
 
 </main>

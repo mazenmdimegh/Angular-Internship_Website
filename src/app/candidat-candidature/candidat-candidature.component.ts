@@ -2,11 +2,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TokenStorageService } from '../services/token-storage.service';
+import { UserService } from '../services/user.service';
 
 @Component({
     selector: 'app-candidat-candidature',
     templateUrl: './candidat-candidature.component.html',
-    styleUrls: ['../candidat/candidat.component.css','../entreprises/entreprises.component.css','../../assets/vendor/font-awesome/css/font-awesome.css','../chat/chat.component.css'],
+    styleUrls: ['../candidat/candidat.component.css'],
     encapsulation: ViewEncapsulation.None,
     styles: [`
     .
@@ -28,8 +29,9 @@ import { TokenStorageService } from '../services/token-storage.service';
 })
 export class CandidatCandidatureComponent implements OnInit{
     closeResult: string;
-    
-    constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal,private tokenStorage: TokenStorageService) { }
+    user:any;
+    Mescandidatures:any;
+    constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal,private tokenStorage: TokenStorageService,private userservices :UserService) { }
     ngOnInit(): void {
       if (!this.tokenStorage.getToken()) {
         this.router.navigate(['home'])
@@ -37,6 +39,13 @@ export class CandidatCandidatureComponent implements OnInit{
       if(!(this.tokenStorage.getUser().roles[0]=="ROLE_CANDIDAT")) {
         this.router.navigate(['home'])
       };
+      const users = this.tokenStorage.getUser();
+      this.userservices.getMesCandidatures( users.id)
+    .subscribe(data=>{ 
+      this.user=data;     
+      this.Mescandidatures=this.user.MesCandidatures;
+      console.log(this.Mescandidatures); 
+    })
     }
     openScrollableContent(quanticfy) {
         this.modalService.open(quanticfy, { scrollable: true });

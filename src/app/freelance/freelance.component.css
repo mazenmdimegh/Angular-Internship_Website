@@ -8,7 +8,9 @@
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-
+.t{
+	margin-top: 50px;
+}
 .container {
 	max-width: 1130px;
 }
@@ -271,3 +273,39 @@ a {
 	color: rgba(39, 39, 39, 0.5);
 }
 
+details {
+	font: 16px "Open Sans", Calibri, sans-serif;
+	width: 620px;
+  }
+  
+  details > summary {
+	padding: 2px 6px;
+	width: 10em;
+	border-radius: 20px;
+	background-color: #ddd;
+	border: none;
+	box-shadow: 3px 3px 4px #a29b9b;
+	cursor: pointer;
+	margin-bottom: 10px;
+  }
+  
+  details > p {
+	border-radius: 0 0 10px 10px;
+	background-color: #ddd;
+	padding: 2px 6px;
+	margin: 0;
+	box-shadow: 3px 3px 4px black;
+  }
+  
+  details[open] > summary {
+	background-color: #e4c6f4;
+  }
+  .bt-fav{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	font-size: 27px;
+	outline: none;
+}

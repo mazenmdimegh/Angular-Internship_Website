@@ -1,7 +1,10 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service';
+import { OffreService } from '../services/offre.service';
 
 @Component({
   selector: 'app-offre',
@@ -29,8 +32,11 @@ import { AuthService } from '../services/auth.service';
 `]
 })
 export class OffreComponent implements OnInit {
-
-  constructor(private fb:FormBuilder,private authService:AuthService,private modalService: NgbModal) { }
+  public offre : any;
+  public candidats : any;
+  public  offreIdFromRoute :number;
+  currentDateTime:any;
+  constructor(private fb:FormBuilder,private authService:AuthService,private modalService: NgbModal,private route: ActivatedRoute,private offreservice : OffreService,public datepipe: DatePipe) { }
   registrationForm= this.fb.group({
     nom:[''],
     prenom:[''],
@@ -45,9 +51,22 @@ export class OffreComponent implements OnInit {
     zip:[]
   })
   ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+   this.offreIdFromRoute = Number(routeParams.get('offreId'));
+   this.offreservice.getOffreById(this.offreIdFromRoute).subscribe(data=>{ 
+    this.offre=data;
+    // console.log(this.offre);
+    let currentDateTime =this.datepipe.transform((new Date), 'yyyy-MM-dd');
+    console.log(currentDateTime);
+    
+  })
+  this.offreservice.getCandidats(this.offreIdFromRoute).subscribe(data=>{ 
+    this.candidats=data;
+  })
   }
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });
+    
   }
 
 

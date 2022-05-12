@@ -1,1 +1,13 @@
 @import "../candidat/candidat.component.css";
+.is-active{
+    background-color: black;
+}
+#compte:hover{
+	background-color: rgb(209 178 217 / 93%)!important;
+	border-radius: 20px;
+}
+
+#offre:hover{
+	background-color: rgb(209 178 217 / 93%)!important;
+	border-radius: 20px;
+}

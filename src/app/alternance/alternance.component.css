@@ -300,3 +300,12 @@ details {
   details[open] > summary {
 	background-color: #e4c6f4;
   }
+  .bt-fav{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	font-size: 27px;
+	outline: none;
+}

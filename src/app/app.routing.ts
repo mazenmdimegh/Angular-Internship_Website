@@ -24,21 +24,37 @@ import { CandidatFavorisComponent } from './candidat-favoris/candidat-favoris.co
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 import { EntrepreneurCompteComponent } from './entrepreneur-compte/entrepreneur-compte.component';
 import { EntrepreneurOffreComponent } from './entrepreneur-offre/entrepreneur-offre.component';
+import { BackOfficeComponent } from './back-office/back-office.component';
+import { SideBarComponent } from './back-office/side-bar/side-bar.component';
+import { OffreManagerComponent } from './back-office/offre-manager/offre-manager.component';
+import { UserManagerComponent } from './back-office/user-manager/user-manager.component';
+import { StagePFEComponent } from './stage-pfe/stage-pfe.component';
+import { StageEtrangerComponent } from './stage-etranger/stage-etranger.component';
+import { StageEteComponent } from './stage-ete/stage-ete.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',     component: SignupComponent },
     { path: 'chat',     component: ChatComponent },
-    { path: 'offre',     component: OffreComponent },
+    { path: 'offre/:offreId',     component: OffreComponent },
     { path: 'formC',     component: FormCondidatComponent },
     { path: 'formE',     component: FormEntrepreneurComponent },
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'favoris',          component: FavorisComponent },
+    {path: 'backOffice', component:BackOfficeComponent,
+    children:[
+      {path:'Offres',component: OffreManagerComponent,}, 
+      {path:'users',component: UserManagerComponent,}
+    ]},
+    {path: 'sidebar', component: SideBarComponent},
 
     { path: 'login',          component: LoginComponent },
     {path:'stage',            component: StageComponent},
+    {path:'stagePFE',            component: StagePFEComponent},
+    {path:'stageEtranger',            component: StageEtrangerComponent},
+    {path:'stageEte',            component: StageEteComponent},
     {path:'alternance',            component: AlternanceComponent},
     {path:'freelance',            component: FreelanceComponent},
     { path: 'entreprises',          component: EntreprisesComponent },

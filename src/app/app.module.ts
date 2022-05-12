@@ -33,6 +33,14 @@ import { CandidatFavorisComponent } from './candidat-favoris/candidat-favoris.co
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 import { EntrepreneurOffreComponent } from './entrepreneur-offre/entrepreneur-offre.component';
 import { EntrepreneurCompteComponent } from './entrepreneur-compte/entrepreneur-compte.component';
+import { BackOfficeComponent } from './back-office/back-office.component';
+import { SideBarComponent } from './back-office/side-bar/side-bar.component';
+import { OffreManagerComponent } from './back-office/offre-manager/offre-manager.component';
+import { UserManagerComponent } from './back-office/user-manager/user-manager.component';
+import { DatePipe } from '@angular/common';
+import { StageEteComponent } from './stage-ete/stage-ete.component';
+import { StagePFEComponent } from './stage-pfe/stage-pfe.component';
+import { StageEtrangerComponent } from './stage-etranger/stage-etranger.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +66,14 @@ import { EntrepreneurCompteComponent } from './entrepreneur-compte/entrepreneur-
     CandidatFavorisComponent,
     EntrepreneurComponent,
     EntrepreneurOffreComponent,
-    EntrepreneurCompteComponent
+    EntrepreneurCompteComponent,
+    BackOfficeComponent,
+    SideBarComponent,
+    OffreManagerComponent,
+    UserManagerComponent,
+    StageEteComponent,
+    StagePFEComponent,
+    StageEtrangerComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +86,7 @@ import { EntrepreneurCompteComponent } from './entrepreneur-compte/entrepreneur-
     BrowserAnimationsModule,
     HomeModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

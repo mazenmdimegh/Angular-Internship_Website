@@ -1,6 +1,5 @@
 body{
-    background-color: #f4f7f6;
-    margin-top:20px;
+   
 }
 .card {
     background: #fff;
@@ -19,7 +18,7 @@ body{
     top: 0;
     padding: 20px;
     z-index: 7
-}
+}   
 
 .chat-app .chat {
     margin-left: 280px;

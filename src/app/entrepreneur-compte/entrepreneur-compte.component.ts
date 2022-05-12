@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { TokenStorageService } from '../services/token-storage.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-entrepreneur-compte',
@@ -25,7 +26,8 @@ export class EntrepreneurCompteComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private route: ActivatedRoute, private router: Router,private tokenStorage: TokenStorageService,private authService: AuthService) { }
+  user:any;
+  constructor(private route: ActivatedRoute, private router: Router,private tokenStorage: TokenStorageService,private authService: AuthService,private userservices:UserService) { }
 
   ngOnInit(): void {
     if (!this.tokenStorage.getToken()) {
@@ -34,10 +36,19 @@ export class EntrepreneurCompteComponent implements OnInit {
       this.router.navigate(['home'])
     }
     
-  const user = this.tokenStorage.getUser();
-    this.form.username=user.username;
-    this.form.email=user.email;
-  this.username = user.username;
+  
+  const users = this.tokenStorage.getUser();
+    
+      this.userservices.getMesCandidatures( users.id)
+    .subscribe(data=>{ 
+      this.user=data;   
+      this.form.username=this.user.username;
+    this.form.email=this.user.email;
+    this.form.tel=this.user.tel;
+    this.form.ncin=this.user.ncin;
+    this.form.societe=this.user.societe;
+    this.form.gouvernorat=this.user.gouvernorat;  
+    })
   }
   
   mcompte(){

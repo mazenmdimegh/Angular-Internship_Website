@@ -392,10 +392,12 @@ background-color: #f9fafa;      ">
                     <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
                       title="Sauvegarder" data-href="/saved-jobs/?id=744367&action=save&reload=✓" rel="nofollow"
                       href="#"></a>
-                    <div class="listing-item__date">
-                      déc. 14, 2021
+                    <div style="display: flex; float: right;">
+                     <div style="margin-top: 9px;   "> <span>{{E.date}}</span></div>
+                     <div> <button class="bt-fav" (click)="addFav(E.id)">  <i class="fa fa-heart-o"></i> </button></div>
                     </div>
                   </div>
+                  <div style="margin-top: 40px;">
                   <div class="media-heading listing-item__title">
                     <a [routerLink]="['/offre']" class="link">{{E.titre}}</a>
                   </div>
@@ -414,6 +416,7 @@ background-color: #f9fafa;      ">
                   <div class="listing-item__desc">
                     {{E.description}}
                   </div>
+                </div>
                 </div>
               </article>
 

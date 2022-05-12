@@ -78,8 +78,8 @@
           <div class="media-heading listing-item__title">
             <div class="f">
               <div class="">
-                <h4>Stage Operations Manager / Guest &amp; Hotel Quality Manager</h4>
-                <p>Monastir, Tunisie<br>Il ya 8 heures</p>
+                <h4>{{offre.titre}}</h4>
+                <p>{{offre.lieu}}<br>Il ya 8 heures</p>
                 <hr style="margin:0 0 20px 0">
               </div>
 
@@ -200,7 +200,7 @@
                 </button>
 
 
-                <div class="overlay" *ngIf="popup">
+                <!-- <div class="overlay" *ngIf="popup">
                   <div class="popup">
                     <h2 style=" font-family: verdana;
                     font-size: 300%; text-align: center;"> Postuler </h2>
@@ -210,13 +210,13 @@
 
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <p style="margin: 22px 0px 0px 14px;">n'attendez pas pour vous garentir ce post</p>
                 <hr style="margin:0">
               </div>
 
               <div class="media-left listing-item__logo f">
-                <p>1 post ouvert</p>
+                <p style="width: 106px;">{{candidats.length}} Candidats</p>
               </div>
             </div>
           </div>
@@ -237,39 +237,34 @@
           <div class="col-md-4">
             <dl>
               <dt>Type d&#039;emploi désiré :</dt>
-              <dd>CDI, Temps plein</dd>
+              <dd>{{(offre.type).slice(0,5)}}</dd>  
             </dl>
           </div>
           <div class="clear"></div>
         </div>
         <h3 class="details-body__title">Description de l&#039;emploi</h3>
         <div class="details-body__content content-text">
-          <p>Anypli est &agrave; la recherche des d&eacute;veloppeurs Symfony.</p>
+          <p>{{offre.societe}} est &agrave; la recherche d'un  {{(offre.titre)}}.</p>
         </div>
         <h3 class="details-body__title">Exigences de l&#039;emploi</h3>
         <div class="details-body__content content-text">
-          <p>Avec au minimum trois ans d'exp&eacute;rience.&nbsp;</p>
-          <p>Salaire tr&egrave;s motivant qui d&eacute;pend du type de profil avec tickets restaurant et assurance
-            groupe.
-          </p>
-          <p>Il y'a aussi la possibilit&eacute; des missions chez le client en France pour les personnes
-            exp&eacute;riment&eacute;es.</p>
+          <p>{{offre.description}}</p>
           <p>Les personnes int&eacute;ress&eacute;es merci d'envoyer votre CV.</p>
         </div>
         <h3 class="details-body__title">Date d&#039;expiration</h3>
-        <div class="details-body__content content-text">04/05/2022</div>
+        <div class="details-body__content content-text">{{(offre.edate)}} </div>
         <br />
 
         <div class="bootstrap-tagsinput" style="margin-top: 10px;"> <span class="main-label">Mots clés: </span>
           <a
             href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=Anypli&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
-              class="tag label label-info" style="font-size: 100%; font-weight: 500;">Anypli</span> </a>
+              class="tag label label-info" style="font-size: 100%; font-weight: 500;">{{offre.societe}}</span> </a>
           <a
             href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=recrute&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
               class="tag label label-info" style="font-size: 100%; font-weight: 500;">recrute</span> </a>
           <a
             href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=D&eacute;veloppeurs Symfony&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
-              class="tag label label-info" style="font-size: 100%; font-weight: 500;">D&eacute;veloppeurs Symfony</span>
+              class="tag label label-info" style="font-size: 100%; font-weight: 500;">{{(offre.titre).slice(5,-1)}}</span>
           </a>
           <a
             href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=exp&eacute;riment&eacute;e&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
@@ -278,12 +273,7 @@
           <a
             href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=informatique&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
               class="tag label label-info" style="font-size: 100%; font-weight: 500;">informatique </span> </a>
-          <a
-            href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=Symfony&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
-              class="tag label label-info" style="font-size: 100%; font-weight: 500;">Symfony</span> </a>
-          <a
-            href="https://www.tanitjobs.com/jobs/?listing_type%5Bequal%5D=Job&action=search&keywords%5Ball_words%5D=D&eacute;veloppeur&GooglePlace%5Blocation%5D%5Bvalue%5D=&GooglePlace%5Blocation%5D%5Bradius%5D=50"><span
-              class="tag label label-info" style="font-size: 100%; font-weight: 500;">D&eacute;veloppeur</span> </a>
+         
           <div class="clear"></div>
         </div>
         <div class="clear"></div>
@@ -291,7 +281,7 @@
         <button type="button" class="visible-xs-inline btn btn-apply btn-primary btn-lg btn-block" href=""
           data-toggle="modal" data-target="#apply-modal" data-href="						https://www.tanitjobs.com/apply-now/?listing_id=904162&ajaxRelocate=1
                   " data-applied='' data-title="																		Postuler à Développeurs Symfony chez Anypli
-                  "> Postuler maintenant </button>
+                  " (click)="openScrollableContent(content)"> Postuler maintenant </button>
       </div>
     </div>
     <br>

@@ -3,7 +3,7 @@
         <!-- Hero for FREE version -->
         <section class="section   section-shaped">
             <!-- Background circles -->
-            <div class="shape shape-style-1 shape-primary">
+            <div class="shape shape-style-1 shape-primary" style="height: 113%;">
                 <span class="span-150"></span>
                 <span class="span-50"></span>
                 <span class="span-50"></span>
@@ -15,46 +15,7 @@
                 <span class="span-50"></span>
                 <span class="span-100"></span>
             </div>
-            <div class="">
-                <div class="col px-0">
-                    <div class="row align-items-center justify-content-center t">
-                        <div class="col-lg-6 text-center">
-                            <p></p>
-                            <p></p>
-                            <nav class="nav">
-                                <div class="c1">
-                                    <div class="c2">
-                                        <div class="c3" style=" margin: 0 0 0 250px;">
-                                            <ul data-testid="user-menu-links" class="ul">
-                                               
-                                                <li class="li">
-                                                    <a class="aa" data-testid="user-menu-link-bookmarks"
-                                                    (click)="offree()">
-                                                        <span>Mes offres</span></a>
-                                                </li>
-                                                
-                                                <li class="li">
-                                                    <a class="aa" data-testid="user-menu-link-account"
-                                                    (click)="comptee()">
-                                                        <span>Mon compte</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="sc-1s0dgt4-10 dVILgj"><i name="search" class="sc-kmQMED hUEBQE"></i></div>
-                            <router-outlet></router-outlet>
-                            <div>
-                                <h1> </h1>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- SVG separator -->
 
             <!-- tttttttttttttttttttttttttttt -->
@@ -66,8 +27,44 @@
 
             <!-- tttttttttttttttttttttttttttt -->
         </section>
+        <div style="background-color: #ded2ed;">
+            <div class="col px-0">
+                <div class="row align-items-center justify-content-center t">
+                    <div class="col-lg-6 text-center" style="max-width: 36%;">
+                        <nav class="nav">
+                            <div class="c1">
+                                <div class="c2">
+                                    <div class="c3" >
+                                        <ul data-testid="user-menu-links" class="ul">
+                                           
+                                            <li class="li">
+                                                <a class="aa active" data-testid="user-menu-link-bookmarks" id="offre"
+                                                (click)="offree()"  style="cursor: pointer;">
+                                                    <span>Mes offres</span></a>
+                                            </li>
+                                            
+                                            <li class="li">
+                                                <a class="aa active" data-testid="user-menu-link-account "style="cursor: pointer;" id="compte"
+                                                (click)="comptee()" style="cursor: pointer;">
+                                                    <span>Mon compte</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="sc-1s0dgt4-10 dVILgj"><i name="search" class="sc-kmQMED hUEBQE"></i></div>
+                        
 
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
 </main>

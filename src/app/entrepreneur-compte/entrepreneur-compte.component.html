@@ -1,12 +1,16 @@
-<div class="sc-cxpSdN sc-iIUQWv hdl9e2-6 dujlTa eslXKg">
+<div class="sc-cxpSdN sc-iIUQWv hdl9e2-6 dujlTa ">
   <div class="sc-1b6z8iw-0 gPRdtP">
     <div id="prc-19-1-1" data-prerendered-border="true" style="margin: 0 100px 0 0;">
       <article class="t66if1-0 cxJSJt">
         <nav class="zd60jn-0 kevoHx">
-          <ol data-testid="applications-nav-links-0" class="zd60jn-1 hknAtW">
-            <li class="zd60jn-2 ifnPCt"><a data-testid="applications-nav-links-0-all" class="zd60jn-4 hxJOlv"
-                (click)="mcompte()"><span>Mon Compte</span></a></li>
-            <li class="zd60jn-2 ifnPCt"><a data-testid="applications-nav-links-0-waiting" class="zd60jn-4 hxJOlv"
+          <ol data-testid="applications-nav-links-0" style="padding: 0;" class="zd60jn-1 hknAtW">
+            <li class="zd60jn-2 ifnPCt"><a
+                style="    border-radius: 35px 0 0 ;  cursor: pointer;  place-content: center;"
+                data-testid="applications-nav-links-0-all" class="zd60jn-4 hxJOlv" (click)="mcompte()"><span>Mon
+                  Compte</span></a></li>
+            <li class="zd60jn-2 ifnPCt"><a
+                style="    border-radius: 0 0 35px; cursor: pointer;   place-content: center;"
+                data-testid="applications-nav-links-0-waiting" class="zd60jn-4 hxJOlv"
                 (click)="param()"><span>Paramètre</span></a></li>
 
 
@@ -19,9 +23,8 @@
 
   <div class="modal-body" style="margin: auto;" *ngIf='moncompte'>
 
-    <form name="form"
-      style="margin-left: 290px;padding: 0 18px; margin-right: 250px; margin-top:-149px; background-color: white;text-align: initial;"
-      (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <form name="form" style="margin-left: 290px;padding: 0 18px; margin-right: 250px; margin-top:-149px; background-color: white;text-align: initial;border-radius: 40px;
+      box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label style="margin: 0 0 0 365px; white-space: nowrap;">Photooo de profil</label>
@@ -230,7 +233,9 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="sub()">Modifier</button>
+      <div>
+        <button type="submit" class="btn btn-primary" (click)="sub()">Modifier</button>
+      </div>
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
@@ -262,11 +267,10 @@
 
   </div>
   <div class="modal-body" style="margin: auto;" *ngIf='parametre'>
-    <form name="form"
-      style="margin-left: 290px;padding: 0 18px; margin-right: 250px; margin-top:-149px; background-color: white;"
-      (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <form name="form" style="margin-left: 290px;padding: 0 18px; margin-right: 250px; margin-top:-149px; background-color: white;border-radius: 40px;
+      box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div style="margin: auto;">
-        
+
         <div class="form-row">
           <div class="form-group col-md-6">
             <label
@@ -279,8 +283,8 @@
           <div class="form-group col-md-6">
             <label for="inputEmail4" style="margin-right: 800px; white-space: nowrap; ">Mot de passe actuel</label>
             <input type="password" class="form-control" type="password" class="form-control" name="Opassword"
-            [(ngModel)]="form.Opassword" required minlength="6" #Opassword="ngModel" id="inputPassword4"
-            placeholder="old password">
+              [(ngModel)]="form.Opassword" required minlength="6" #Opassword="ngModel" id="inputPassword4"
+              placeholder="old password">
           </div>
 
         </div>
@@ -288,8 +292,8 @@
           <div class="form-group col-md-6">
             <label for="inputEmail4" style="margin-right:800px; white-space: nowrap;">Nouveau mot de passe</label>
             <input type="password" class="form-control" type="password" class="form-control" name="Npassword"
-            [(ngModel)]="form.Npassword" required minlength="6" #Npassword="ngModel" id="inputPassword4"
-            placeholder="new password">
+              [(ngModel)]="form.Npassword" required minlength="6" #Npassword="ngModel" id="inputPassword4"
+              placeholder="new password">
           </div>
 
         </div>
@@ -297,7 +301,7 @@
           <div class="form-group col-md-6">
             <label for="inputEmail4" style="margin-right: 700px; white-space: nowrap; "> Confirmer votre mot de
               passe</label>
-              <input type="password" class="form-control" type="password" class="form-control" name="password"
+            <input type="password" class="form-control" type="password" class="form-control" name="password"
               [(ngModel)]="form.password" required minlength="6" #password="ngModel" id="inputPassword4"
               placeholder="password">
           </div>
@@ -306,8 +310,8 @@
 
         <p></p>
         <div>
-          <button type="submit" class="btn btn-primary"
-            style="border-radius: 20px; margin-bottom: 17px;" (click)="subPassword()">Modifier</button>
+          <button type="submit" class="btn btn-primary" style="border-radius: 20px; margin-bottom: 17px;"
+            (click)="subPassword()">Modifier</button>
         </div>
       </div>
     </form>

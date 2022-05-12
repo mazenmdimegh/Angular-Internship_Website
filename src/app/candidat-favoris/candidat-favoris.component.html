@@ -1,72 +1,76 @@
 <div class="sc-cxpSdN sc-iIUQWv hdl9e2-6 dujlTa eslXKg">
     <div class="sc-cxpSdN sc-iIUQWv hdl9e2-6 hkiZIz eslXKg">
-        <h2 style="margin: 0 600px 0 0; font-family: cursive; font-weight: bold;"> Jobs </h2>
-        <p></p>
-        <div class="hdl9e2-7 iCZwFj">
+        <h2 style=" font-family: cursive; font-weight: bold;text-align: center;"> Mes favoris </h2>
+        <div *ngFor="let E of FAvorisoffres" class="hdl9e2-7 iCZwFj" style="margin: 40px;">
             <div class="sc-cxpSdN sc-iIUQWv bBMwmD" style="min-width: 0px;
-        border-radius: 14px;
-        margin: auto;
-        width: 800px;
-        font-size: 100%;
-        vertical-align: baseline;
-        background-color: white;
-        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;">
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin-left: 700px;"></i>
+                    border-radius: 14px;
+                    margin: auto;
+                    width: 800px;
+                    font-size: 100%;
+                    vertical-align: baseline;
+                    background-color: white;
+                    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+                    cursor: pointer;">
                 <div class="sc-cxpSdN sc-iIUQWv ekWluj">
                     <a data-reference="tqf-be6e20214b560eae97620389" data-role="application:thumb"
-                        class="sc-1u92sci-9 bSKMZL" href="/fr/me/applications/waiting#c/tqf-be6e20214b560eae97620389">
-                        <div class="sc-1u92sci-1 kmDwZy" style="margin: 0 600px 24px 0;">
-                            <img alt="Développeur frontend"
-                                src="https://cdn.welcometothejungle.co/uploads/organization/logo/2028/163232/cfd07583-c2d7-4070-9a33-ad4565163486.jpg"
-                                class="sc-1u92sci-2 dSEUbQ">
+                        class="sc-1u92sci-9 bSKMZL" (click)="openScrollableContent(quanticfy)">
+                        <div style="display: flex;">
+                            <div class="sc-1u92sci-1 kmDwZy">
+                                <img style="border-radius: 14px;" alt="Développeur frontend"
+                                    src="https://cdn.welcometothejungle.co/uploads/organization/logo/2028/163232/cfd07583-c2d7-4070-9a33-ad4565163486.jpg"
+                                    class="sc-1u92sci-2 dSEUbQ">
+                            </div>
+                            <div class="sc-1u92sci-0 fCrCYa">
+                                <div style="display: flex; float: right;">
+                                    <div style="margin-top: 9px;   "> <span>{{E.date}}</span></div>
+                                    <div> <button class="bt-fav" style="font-size: 24px;" (click)="removeFav(E.id)"> <i class="fa fa-close"></i>
+                                        </button></div>
+                                </div>
+                                <div style="padding: 34px 0;">
+                                    <h4 style="margin: 0px 0 7px 0;" class="sc-1u92sci-3 jPonwg">
+                                        <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
+                                            <span class="ais-Highlight-nonHighlighted">{{E.societe}}</span>
+                                        </span>
+                                    </h4>
+                                    <h3 class="sc-1u92sci-4 iTBLwf" style="margin: 0 0 31px 0;">
+                                        <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
+                                            <span class="ais-Highlight-nonHighlighted">{{E.titre}}</span>
+                                        </span>
+                                    </h3>
+                                    <ul class="sc-1lvyirq-4 hugpBY" style="display: flex;
+                                flex-flow: row wrap;
+                                margin-bottom: -0.375rem;
+                                font-weight: 400;
+                                font-size: 0.875rem;
+                                line-height: 1.3;
+                                letter-spacing: -0.3px;
+                                -webkit-box-align: center;
+                                align-items: center;
+                                -webkit-box-pack: center;
+                                justify-content: center;
+                                color: rgb(76, 76, 76);">
+                                        <li class="sc-1lvyirq-0 jfvfA">
+                                            <span role="img" class="sc-1lvyirq-3 dZpMOU">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true"
+                                                    style="margin-right: 5px;"></i></span>
+                                            <span class="sc-1lvyirq-2 gRznTA"
+                                                style="margin: 0 29px 0 0;">{{E.type}}</span>
+                                        </li>
+                                        <li class="sc-1lvyirq-0 jfvfA"><span role="img" class="sc-1lvyirq-3 dZpMOU"><i
+                                                    class="fa fa-map-marker" aria-hidden="true"
+                                                    style="margin-right: 5px;"></i></span><span
+                                                class="sc-1lvyirq-2 gRznTA"
+                                                style="margin: 0 29px 0 0;">{{E.lieu}}</span></li>
+                                        <li class="sc-1lvyirq-0 jfvfA" title="[object Object]"><span role="img"
+                                                class="sc-1lvyirq-3 dZpMOU"><i class="fa fa-clock-o" aria-hidden="true"
+                                                    style="margin-right: 5px;"></i></span><span
+                                                class="sc-1lvyirq-2 gRznTA"><time datetime="2022-04-25T14:40:15"
+                                                    style="    margin: 0 29px 0 0;"><span>{{E.date}}</span></time></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <header class="sc-1u92sci-0 fCrCYa" style="margin: -155px 0 0 0;">
-                            <h4 style="margin: 0px 0 7px 0;" class="sc-1u92sci-3 jPonwg">
-                                <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
-                                    <span class="ais-Highlight-nonHighlighted">THE QUANTIC FACTORY</span>
-                                </span>
-                            </h4>
-                            <h3 class="sc-1u92sci-4 iTBLwf" style="margin: 0 0 31px 0;">
-                                <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
-                                    <span class="ais-Highlight-nonHighlighted">Développeur frontend</span>
-                                </span>
-                            </h3>
-                            <ul class="sc-1lvyirq-4 hugpBY" style="display: flex;
-     flex-flow: row wrap;
-     margin-bottom: -0.375rem;
-     font-weight: 400;
-     font-size: 0.875rem;
-     line-height: 1.3;
-     letter-spacing: -0.3px;
-     -webkit-box-align: center;
-     align-items: center;
-     -webkit-box-pack: center;
-     justify-content: center;
-     color: rgb(76, 76, 76);
-     ">
-                                <li class="sc-1lvyirq-0 jfvfA">
-                                    <span role="img" class="sc-1lvyirq-3 dZpMOU">
-                                        <i class="fa fa-newspaper-o" aria-hidden="true"
-                                            style="margin-right: 5px;"></i></span>
-                                    <span class="sc-1lvyirq-2 gRznTA" style="margin: 0 29px 0 0;">Stage</span>
-                                </li>
-                                <li class="sc-1lvyirq-0 jfvfA"><span role="img" class="sc-1lvyirq-3 dZpMOU"><i
-                                            class="fa fa-map-marker" aria-hidden="true"
-                                            style="margin-right: 5px;"></i></span><span class="sc-1lvyirq-2 gRznTA"
-                                        style="margin: 0 29px 0 0;">Tunis</span></li>
-                                <li class="sc-1lvyirq-0 jfvfA" title="[object Object]"><span role="img"
-                                        class="sc-1lvyirq-3 dZpMOU"><i class="fa fa-clock-o" aria-hidden="true"
-                                            style="margin-right: 5px;"></i></span><span
-                                        class="sc-1lvyirq-2 gRznTA"><time datetime="2022-04-25T14:40:15"
-                                            style="    margin: 0 29px 0 0;"><span>avant-hier</span></time></span></li>
-                            </ul>
-                        </header>
-                        <footer class="sc-1u92sci-8 CSDJN">
-                            <div title="Les équipes de THE QUANTIC FACTORY ont bien reçu votre candidature, n'hésitez pas à les relancer"
-                                class="sc-kHdrYz fDrpQv sc-1u92sci-5 evZXWa"><i name="bulk"
-                                    class="sc-kmQMED GRwgp"></i><span class="sc-1u92sci-6 gtxxsa"><span
-                                        style="color: white;">Reçu</span></span></div>
-                        </footer>
                     </a>
                 </div>
             </div>
@@ -76,14 +80,17 @@
                 <div class="ais-Pagination ais-Pagination--noRefinement">
                     <ul class="ais-Pagination-list ais-Pagination-list--noRefinement">
                         <li class="ais-Pagination-item ais-Pagination-item--disabled ais-Pagination-item--firstPage">
-                            <span class="ais-Pagination-link"></span></li>
+                            <span class="ais-Pagination-link"></span>
+                        </li>
                         <li class="ais-Pagination-item ais-Pagination-item--disabled ais-Pagination-item--previousPage">
-                            <span class="ais-Pagination-link"></span></li>
+                            <span class="ais-Pagination-link"></span>
+                        </li>
                         <li class="ais-Pagination-item ais-Pagination-item--selected ais-Pagination-item--page"><a
                                 class="ais-Pagination-link ais-Pagination-link--selected" aria-label="Page 1"
                                 href="#"></a></li>
                         <li class="ais-Pagination-item ais-Pagination-item--disabled ais-Pagination-item--nextPage">
-                            <span class="ais-Pagination-link"></span></li>
+                            <span class="ais-Pagination-link"></span>
+                        </li>
                     </ul>
                 </div>
             </div>

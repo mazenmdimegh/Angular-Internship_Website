@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-alternance',
@@ -23,7 +24,7 @@ export class AlternanceComponent implements OnInit {
   public Lieu=[];
   public Type=[];
  
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService,private service:TokenStorageService) { }
 
   ngOnInit() {
     this.Getoffre();
@@ -149,5 +150,8 @@ export class AlternanceComponent implements OnInit {
       console.log(this.Offres);
       
     })
+  }
+  addFav(id:any){
+    this.service.addFavoris(id)
   }
 }
