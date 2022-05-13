@@ -38,7 +38,7 @@ FAvorisoffres:any;
   }
   removeFav(id:any){
     this.tokenStorage.removeFavoris(id);
-      
+    window.location.reload();     
   }
 
 

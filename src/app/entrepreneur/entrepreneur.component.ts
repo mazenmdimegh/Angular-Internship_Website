@@ -11,9 +11,9 @@ export class EntrepreneurComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
-    if (this.route.snapshot.url.join('')=="entrepreneur"){
-    this.router.navigate(['entrepreneur/comptee'])
-    }
+    // if (this.route.snapshot.url.join('')=="entrepreneur"){
+    // this.router.navigate(['entrepreneur/comptee'])
+    // }
     if(this.route.snapshot.url.join('')=="offree"){
       const offre = document.getElementById('offre');
 

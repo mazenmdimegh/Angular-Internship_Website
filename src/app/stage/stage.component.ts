@@ -25,7 +25,7 @@ export class StageComponent implements OnInit {
   public Lieu=[];
   public Type=[];
  
-  constructor(private authService:AuthService,private service:TokenStorageService) { }
+  constructor(private authService:AuthService,private service:TokenStorageService,private serviceToken: TokenStorageService) { }
 
   ngOnInit() {
     this.Getoffre();
@@ -153,7 +153,25 @@ export class StageComponent implements OnInit {
     })
   }
   addFav(id:any){
-    this.service.addFavoris(id)
+    const Mesfavoris=JSON.parse(this.serviceToken.getFavoris());
+    
+    if(Mesfavoris.ids.indexOf(id)!=-1){
+      const offre = document.getElementById('heart'+id);
+      if (offre != null) {
+        offre.style.fontSize = '27px';
+        offre.style.color='black'
+      }
+      console.log("Remove");
+      this.serviceToken.removeFavoris(id);  
+    }else{
+      this.service.addFavoris(id)
+      const offre = document.getElementById('heart'+id);
+      console.log("addddd");
+      if (offre != null) {
+        offre.style.fontSize = '33px';
+        offre.style.color='red'
+      }
+    }
   }
 }
 

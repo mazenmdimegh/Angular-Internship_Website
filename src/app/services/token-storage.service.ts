@@ -40,7 +40,7 @@ export class TokenStorageService {
   }else{
     let f=JSON.parse(window.sessionStorage.getItem(USER_Favoris));
     this.favoris=[]
-    console.log("else")
+    console.log("adddFavService")
     for (let i = 0; i < f.ids["length"]; i++) {
       this.favoris.push(f.ids[i])
     }
@@ -54,14 +54,14 @@ export class TokenStorageService {
     if (window.sessionStorage.getItem(USER_Favoris)){
       let f=JSON.parse(window.sessionStorage.getItem(USER_Favoris));
       this.fav=[]
-      console.log("else")
+      console.log("RemoveFavService")
       for (let i = 0; i < f.ids["length"]; i++) {
         if(f.ids[i]!=id)
         this.fav.push(f.ids[i])
       }
       let e= {"ids":this.fav}
       window.sessionStorage.setItem(USER_Favoris, JSON.stringify(e));
-      window.location.reload();
+      // window.location.reload();
     }
   }
 

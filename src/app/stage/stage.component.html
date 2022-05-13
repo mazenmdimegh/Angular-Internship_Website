@@ -22,7 +22,7 @@
               <p></p>
               <p></p>
               <h1 class="display-3  text-white" style="width: max-content; text-align: center; padding-left: 150px; ">
-                Offres de Stage </h1>
+                Offres de Stage PFE </h1>
               <p></p>
               <h6 style="text-align: center; font-size: medium; color: #ffffff; ">Vous êtes à la recherche d’une
                 entreprise pour un contrat en alternance ? L’Etudiant vous propose des centaines d’offres de contrats en
@@ -394,12 +394,12 @@ background-color: #f9fafa;      ">
                       href="#"></a>
                     <div style="display: flex; float: right;">
                      <div style="margin-top: 9px;   "> <span>{{E.date}}</span></div>
-                     <div> <button class="bt-fav" (click)="addFav(E.id)">  <i class="fa fa-heart-o"></i> </button></div>
+                     <div> <button class="bt-fav" (click)="addFav(E.id)">  <i id="heart{{E.id}}"class="fa fa-heart"></i> </button></div>
                     </div>
                   </div>
                   <div style="margin-top: 40px;">
                   <div class="media-heading listing-item__title">
-                    <a [routerLink]="['/offre']" class="link">{{E.titre}}</a>
+                    <a routerLink="/offre/{{E.id}}" class="link">{{E.titre}}</a>
                   </div>
 
                   <div class="listing-item__info listing-item__info--item-salary-range clearfix">

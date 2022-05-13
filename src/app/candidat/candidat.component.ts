@@ -24,9 +24,9 @@ export class CandidatComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.route.snapshot.url.join('')=="candidat"){
-      this.router.navigate(['candidat/compte'])
-    }
+    // if (this.route.snapshot.url.join('')=="candidat"){
+    //   this.router.navigate(['candidat/compte'])
+    // }
     if(this.route.snapshot.url.join('')=="candidature"){
       const candidature = document.getElementById('candidature');
 

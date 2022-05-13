@@ -1,59 +1,33 @@
 <ng-template #quanticfy let-modal>
     <div class="modal-header">
-        <h4 class="modal-title">Détails</h4>
+        <h4 class="modal-title">Candidats</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
-    <div class="ab" style="display: flex;">
+    <div *ngIf="candidats.length==0">
+        <img style="display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 34%;" src="../../assets/img/brand/err.webp">
+        <h5 style="text-align: center">
+            Pas de candidats pour le moment.
+        </h5>
+    </div>
+    <div class="ab" style="display: flex;" *ngIf="candidats.length>0">
         <div id="plist" class="people-list" style="margin: 72px 155px 0px 53px;">
 
             <ul class="list-unstyled chat-list mt-2 mb-0" style="margin: 12px -53px 12px -40px;
             padding: 12px 20px;">
-                <li class="clearfix" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                <li *ngFor="let e of candidats" class="clearfix" (click)="detail(e.id)" style=" margin: 12px -103px 12px -33px;">
+                    <img src="../../assets/img/brand/{{e.username}}.png" alt="avatar">
                     <div class="about">
-                        <div class="name">Ahmed Chedly</div>
-                        <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
-                    </div>
-                </li>
-                <li class="clearfix active" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                    <div class="about">
-                        <div class="name">Khoulou Ben Hlel</div>
+                        <div class="name">{{e.username}}</div>
                         <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                    </div>
-                </li>
-                <li class="clearfix" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                    <div class="about">
-                        <div class="name">Anas Ben ABdallah</div>
-                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                    </div>
-                </li>
-                <li class="clearfix" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                    <div class="about">
-                        <div class="name">rayen riahi</div>
-                        <div class="status"> <i class="fa fa-circle offline"></i> left 2hrs ago </div>
-                    </div>
-                </li>
-                <li class="clearfix" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                    <div class="about">
-                        <div class="name">chaima arfaoui</div>
-                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                    </div>
-                </li>
-                <li class="clearfix" style="    margin: 12px -103px 12px -33px;">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                    <div class="about">
-                        <div class="name">salima boughanmi</div>
-                        <div class="status"> <i class="fa fa-circle offline"></i> left 2min ago </div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="chat">
-            <div class="chat-header clearfix">
+        <div *ngFor="let a of details"  class="chat">
+            <!-- <div class="chat-header clearfix">
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
@@ -66,7 +40,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
             <div class="chat-history">
                 <ul class="m-b-0">
                     <li class="clearfix">
@@ -82,7 +56,9 @@
                             <div style="margin: 15px 10px 15px 14px;">
                                 <h5 style="font-size: medium;
                         font-family: emoji;">Madame, Monsieur,<br>
-                                    Je suis actuellement étudiante en deuxieme année cycle ingénieu informatiqu à
+                        {{a.lettreMotivation}}
+                        
+                                   <!--  Je suis actuellement étudiante en deuxieme année cycle ingénieu informatiqu à
                                     TEK-UP university , je vous adresse cette lettre afin
                                     de solliciter un stage au sein du service informatique de votre entreprise, d'une
                                     durée de 6
@@ -114,7 +90,9 @@
                                     eux.<br>
                                     Dans l'espoir d'une réponse favorable, je vous prie de croire, Madame, Monsieur, en
                                     ma
-                                    considération la plus parfaite.</h5>
+                                    considération la plus parfaite. -->
+                                    Cordialement.
+                                </h5>
                             </div>
 
 
@@ -155,7 +133,7 @@
                     ">
                 <div class="sc-cxpSdN sc-iIUQWv ekWluj">
                     <a data-reference="tqf-be6e20214b560eae97620389" data-role="application:thumb"
-                        class="sc-1u92sci-9 bSKMZL" >
+                        class="sc-1u92sci-9 bSKMZL">
                         <div style="display: flex;">
                             <div class="sc-1u92sci-1 kmDwZy">
                                 <img style="border-radius: 14px;" alt="Développeur frontend"
@@ -164,17 +142,19 @@
                             </div>
                             <div class="sc-1u92sci-0 fCrCYa" style="    width: 100%;">
                                 <div style="display: flex; float: right;">
-                                    <div> <button class="bt-fav" style="font-size: 24px;cursor: pointer;" (click)="SuppOffre(E.id)"> <i
-                                                class="fa fa-close"></i>
+                                    <div> <button class="bt-fav" style="font-size: 24px;cursor: pointer;"
+                                            (click)="SuppOffre(E.id)"> <i class="fa fa-close"></i>
                                         </button></div>
                                 </div>
                                 <div style="padding: 34px 0;">
                                     <h4 style="margin: 0px 0 7px 0;" class="sc-1u92sci-3 jPonwg">
                                         <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
-                                            <span class="ais-Highlight-nonHighlighted">{{E.societe}} id : {{E.id}}</span>
+                                            <span class="ais-Highlight-nonHighlighted">{{E.societe}} id :
+                                                {{E.id}}</span>
                                         </span>
                                     </h4>
-                                    <h3 class="sc-1u92sci-4 iTBLwf" style="margin: 0 0 31px 0;cursor: pointer;"(click)="openScrollableContent(quanticfy)">
+                                    <h3 class="sc-1u92sci-4 iTBLwf" style="margin: 0 0 31px 0;cursor: pointer;"
+                                        (click)="openScrollableContent(quanticfy,E.id)">
                                         <span class="ais-Highlight sc-1s0dgt4-13 bglWVE">
                                             <span class="ais-Highlight-nonHighlighted">{{E.titre}}</span>
                                         </span>

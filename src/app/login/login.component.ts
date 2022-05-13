@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
         console.log(data)
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-
+        const favoris=[];
+        let e= {"ids":favoris}
+        window.sessionStorage.setItem('USER_Favoris', JSON.stringify(e));
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;

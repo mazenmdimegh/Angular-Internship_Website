@@ -30,6 +30,8 @@ import { UserService } from '../services/user.service';
 export class EntrepreneurOffreComponent implements OnInit{
   closeResult: string;
   MesOffres:any;
+  candidats:any;
+  details:any; 
   constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal,private tokenStorage: TokenStorageService, private userservices : UserService,private offreservice:OffreService) { }
   ngOnInit(): void {
     if (!this.tokenStorage.getToken()) {
@@ -43,11 +45,24 @@ export class EntrepreneurOffreComponent implements OnInit{
       this.MesOffres=data;     
       console.log(this.MesOffres); 
     })
+    
   }
-  openScrollableContent(quanticfy) {
+  openScrollableContent(quanticfy,id) {
+    this.offreservice.getCandidats(id)
+    .subscribe(data=>{ 
+      this.candidats=data;  
+      console.log(this.candidats); 
       this.modalService.open(quanticfy, { scrollable: true });
-    }
-  
+    });
+  }
+  detail(id:number){
+    console.log(id);
+    this.userservices.getDet(id).subscribe(data =>{
+      this.details=data;
+      console.log(data);  
+    });
+    console.log(this.details); 
+  }
     SuppOffre(id:any){
       this.offreservice.SuppOffre(id)
       .subscribe(data=>{ 
@@ -58,6 +73,9 @@ export class EntrepreneurOffreComponent implements OnInit{
       console.log("deleeeete")
       window.location.reload();
         
+    }
+    Pop(id:number){
+      
     }
   
 }
